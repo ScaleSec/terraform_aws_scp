@@ -1,0 +1,2 @@
+#-----cloudtrail/outputs.tf----#
+

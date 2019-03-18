@@ -64,6 +64,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "importexport:*",
     "inspector:*",
     "iot:*",
+    "kinesis:*"
     "kinesisanalytics:*",
     "kinesisvideo:*",
     "kms:*",
@@ -87,6 +88,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "serverlessrepo:*",
     "sms:*",
     "shield:*",
+    "sms:*",
     "sns:*",
     "sqs:*",
     "s3:*",

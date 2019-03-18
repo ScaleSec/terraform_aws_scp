@@ -1,0 +1,16 @@
+## Below are notes based off research between IAM permissions and the hipaa service list located here: https://aws.amazon.com/compliance/hipaa-eligible-services-reference/
+
+## Not Controlled through aws IAM:
+- AWS Elemental MediaConnect
+- AWS Elemental MediaConvert
+- AWS Elemental MediaLive
+- AWS Managed Services
+
+## sagemaker:* does not distinguish
+- Amazon SageMaker [excluding Public Workforce and Vendor Workforce]
+
+## IAM Permissions for elasticache does not differentiate between memcached and redis
+- Amazon ElastiCache (Redis)
+
+## IAM permissions do not differentiate between AD Connector and Simple AD
+- AWS Directory Services excluding Simple AD and AD Connector

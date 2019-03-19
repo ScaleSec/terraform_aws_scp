@@ -14,7 +14,7 @@ Hashicorp Terraform and an Amazon Web Services Organization are required to use 
 
 ### Notes
 
-The files [hipaa_iam_notes](hipaa_scp/hipaa_iam_notes) and [pci_iam_notes](pci_scp/pci_iam_notes) contain information about IAM policies and HIPAA services and their potential mismatches. Not all IAM policies are granular enough to distinguish between sub-services.
+The files [hipaa_iam_notes](hipaa_scp/hipaa_iam_notes) and [pci_iam_notes](pci_scp/pci_iam_notes) contain information about IAM policies and HIPAA/PCI services regarding their potential mismatches. Not all IAM policies are granular enough to distinguish between sub-services.
 
 ### Disclaimer
 

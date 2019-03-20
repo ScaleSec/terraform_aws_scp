@@ -5,6 +5,7 @@
 *.bak
 *.swp
 *.log
+*.backup
 
 ### STS ###
 .apt_generated

@@ -2,6 +2,7 @@
 
 variable "aws_region" {
   description = "The AWS Region of your HIPAA account(s)"
+  default = "us-east-1"
 }
 
 variable "target_id" {

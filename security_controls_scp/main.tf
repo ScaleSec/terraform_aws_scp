@@ -8,24 +8,28 @@ provider "aws" {
 
 ## Deploy CloudTrail AWS Org Policies
 module "cloudtrail" {
-  source      = "./cloudtrail"
+  source      = "modules/cloudtrail"
+
   target_id = "${var.target_id}"
 }
 
 ## Deploy VPC AWS Org Policies
 module "vpc" {
-  source      = "./vpc"
+  source      = "modules/vpc"
+
   target_id = "${var.target_id}"
 }
 
 ## Deploy AWS Config AWS Org Policies
 module "awsconfig" {
-  source      = "./awsconfig"
+  source      = "modules/awsconfig"
+
   target_id = "${var.target_id}"
 }
 
 ## Deploy GuardDuty AWS Org Policies
 module "guardduty" {
-  source      = "./guardduty"
+  source      = "modules/guardduty"
+  
   target_id = "${var.target_id}"
 }

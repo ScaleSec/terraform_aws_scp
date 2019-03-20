@@ -7,3 +7,11 @@ variable "aws_region" {
 variable "pci_account_id" {
   description = "The PCI compliant AWS account ID."
 }
+
+variable "shared_credentials_file" {
+  description = "The location of aws credentials file. Example: ~/.aws/credentials"
+}
+
+variable "customprofile" {
+  description = "The profile to be used from the credentials file."
+}

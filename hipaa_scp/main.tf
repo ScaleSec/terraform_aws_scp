@@ -2,11 +2,13 @@
 
 provider "aws" {
   region = "${var.aws_region}"
+  shared_credentials_file = "${var.shared_credentials_file}"
+  profile = "${var.customprofile}"
 }
 
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/hipaa-eligible-services-reference/
 resource "aws_organizations_policy" "allow_hipaa_services" {
-  name        = "allow_hipaa_services"
+  name        = "Allow HIPAA Services"
   description = "Only allow HIPAA services as of 3/5/2019"
 
   content = <<CONTENT
@@ -36,7 +38,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "cognito-idp:*",
     "cognito-sync:*",
     "comprehendmedical:*",
-    "config:*"
+    "config:*",
     "connect:*",
     "datasync:*",
     "directconnect:*",
@@ -50,9 +52,9 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "eks:*",
     "elasticloadbalancing:*",
     "elasticmapreduce:*",
-    "es:*"
+    "es:*",
     "events:*",
-    "firehose:*"
+    "firehose:*",
     "fms:*",
     "freertos:*",
     "fsx:*",
@@ -64,7 +66,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "importexport:*",
     "inspector:*",
     "iot:*",
-    "kinesis:*"
+    "kinesis:*",
     "kinesisanalytics:*",
     "kinesisvideo:*",
     "kms:*",
@@ -105,7 +107,6 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "worklink:*",
     "workspaces:*",
     "xray:*"
-
     ],
     "Resource": "*"
     }

@@ -2,8 +2,8 @@
 
 provider "aws" {
   region = "${var.aws_region}"
-  shared_credentials_file = "~/.aws/credentials"
-  profile = "sudojason"
+  shared_credentials_file = "${var.shared_credentials_file}"
+  profile = "${var.customprofile}"
 }
 
 ## Deploy CloudTrail AWS Org Policies

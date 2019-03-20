@@ -2,11 +2,13 @@
 
 provider "aws" {
   region = "${var.aws_region}"
+  shared_credentials_file = "${var.shared_credentials_file}"
+  profile = "${var.customprofile}"
 }
 
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 resource "aws_organizations_policy" "allow_pci_services" {
-  name        = "allow_pci_services"
+  name        = "Allow PCI Services"
   description = "Only allow PCI services"
 
   content = <<CONTENT
@@ -34,7 +36,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "cognito-idp:*",
     "cognito-sync:*",
     "comprehend:*",
-    "config:*"
+    "config:*",
     "connect:*",
     "datasync:*",
     "directconnect:*",
@@ -50,8 +52,8 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "eks:*",
     "elasticloadbalancing:*",
     "elasticmapreduce:*",
-    "es:*"
-    "firehose:*"
+    "es:*",
+    "firehose:*",
     "fms:*",
     "freertos:*",
     "fsx:*",
@@ -64,7 +66,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "importexport:*",
     "inspector:*",
     "iot:*",
-    "kinesis:*"
+    "kinesis:*",
     "kinesisanalytics:*",
     "kinesisvideo:*",
     "kms:*",
@@ -104,7 +106,6 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "workdocs:*",
     "workspaces:*",
     "xray:*"
-
     ],
     "Resource": "*"
     }

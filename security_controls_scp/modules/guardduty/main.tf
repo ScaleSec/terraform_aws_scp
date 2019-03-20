@@ -1,4 +1,4 @@
-#-----security_controls_scp/guardduty/main.tf----#
+#-----security_controls_scp/modules/guardduty/main.tf----#
 resource "aws_organizations_policy" "deny_guardduty_disassociate" {
   name        = "Deny GuardDuty Disassociation"
   description = "Deny the ability to disassociate a GuardDuty member."

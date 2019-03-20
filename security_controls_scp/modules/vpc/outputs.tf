@@ -1,2 +1,2 @@
-#-----security_controls_scp/vpc/outputs.tf----#
+#-----security_controls_scp/modules/vpc/outputs.tf----#
 

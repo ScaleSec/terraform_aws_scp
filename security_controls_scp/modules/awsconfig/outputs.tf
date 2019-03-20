@@ -1,2 +1,2 @@
-#-----security_controls_scp/awsconfig/outputs.tf----#
+#-----security_controls_scp/modules/awsconfig/outputs.tf----#
 

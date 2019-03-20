@@ -1,4 +1,4 @@
-#-----security_controls_scp/vpc/main.tf----#
+#-----security_controls_scp/modules/vpc/main.tf----#
 resource "aws_organizations_policy" "deny_vpc_flow_logs_delete" {
   name        = "Deny Flow Logs Deletion"
   description = "Deny the ability to delete VPC Flow Logs"

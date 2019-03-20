@@ -1,4 +1,4 @@
-#-----security_controls_scp/awsconfig/main.tf----#
+#-----security_controls_scp/modules/awsconfig/main.tf----#
 resource "aws_organizations_policy" "deny_aws_config_rules_delete" {
   name        = "Deny Config Rules Delete"
   description = "Deny the ability to delete AWS Config Rules"

@@ -1,2 +1,2 @@
-#-----security_controls_scp/guardduty/outputs.tf----#
+#-----security_controls_scp/modules/guardduty/outputs.tf----#
 

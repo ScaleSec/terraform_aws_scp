@@ -1,4 +1,4 @@
-#-----security_controls_scp/cloudtrail/main.tf----#
+#-----security_controls_scp/modules/cloudtrail/main.tf----#
 resource "aws_organizations_policy" "deny_cloudtrail_delete" {
   name        = "Deny CloudTrail Delete"
   description = "Deny the ability to delete CloudTrails"

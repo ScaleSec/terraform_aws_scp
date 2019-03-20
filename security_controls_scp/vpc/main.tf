@@ -1,6 +1,6 @@
-#-----root_scp/vpc/main.tf----#
+#-----security_controls_scp/vpc/main.tf----#
 resource "aws_organizations_policy" "deny_vpc_flow_logs_delete" {
-  name        = "org_vpc_deny_flow_logs_delete"
+  name        = "Deny Flow Logs Deletion"
   description = "Deny the ability to delete VPC Flow Logs"
 
   content = <<CONTENT
@@ -23,5 +23,5 @@ CONTENT
 
 resource "aws_organizations_policy_attachment" "deny_vpc_flow_logs_delete_attachment" {
   policy_id = "${aws_organizations_policy.deny_vpc_flow_logs_delete.id}"
-  target_id = "${var.org_root_id}"
+  target_id = "${var.target_id}"
 }

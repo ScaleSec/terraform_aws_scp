@@ -1,7 +1,7 @@
-#-----root_scp/cloudtrail/main.tf----#
+#-----security_controls_scp/cloudtrail/main.tf----#
 resource "aws_organizations_policy" "deny_cloudtrail_delete" {
-  name        = "org_cloudtrail_deny_delete"
-  description = "Deny the ability to delete cloudtrails"
+  name        = "Deny CloudTrail Delete"
+  description = "Deny the ability to delete CloudTrails"
 
   content = <<CONTENT
 {
@@ -19,5 +19,5 @@ CONTENT
 
 resource "aws_organizations_policy_attachment" "deny_cloudtrail_delete_attachment" {
   policy_id = "${aws_organizations_policy.deny_cloudtrail_delete.id}"
-  target_id = "${var.org_root_id}"
+  target_id = "${var.target_id}"
 }

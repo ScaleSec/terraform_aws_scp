@@ -29,8 +29,10 @@
 /.nb-gradle/
 /build/
 .terraform/*
+*/.terraform/*
 terraform.tfstate
 terraform.tfstate.lock
+
 
 
 ## Ignore Visual Studio temporary files, build results, and

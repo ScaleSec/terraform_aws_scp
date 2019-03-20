@@ -1,7 +1,7 @@
-#-----root_scp/guardduty/main.tf----#
+#-----security_controls_scp/guardduty/main.tf----#
 resource "aws_organizations_policy" "deny_guardduty_disassociate" {
-  name        = "org_guardduty_deny_disassociate"
-  description = "Deny the ability to disassociate a guardduty member."
+  name        = "Deny GuardDuty Disassociation"
+  description = "Deny the ability to disassociate a GuardDuty member."
 
   content = <<CONTENT
 {
@@ -19,5 +19,5 @@ CONTENT
 
 resource "aws_organizations_policy_attachment" "deny_guardduty_disassociate_attachment" {
   policy_id = "${aws_organizations_policy.deny_guardduty_disassociate.id}"
-  target_id = "${var.org_root_id}"
+  target_id = "${var.target_id}"
 }

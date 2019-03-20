@@ -5,7 +5,7 @@ This repo is a collection of AWS service control policies written in Hashicorp T
 ### Content
 
 - The [hipaa_scp](hipaa_scp/) folder is a service control policy that whitelists HIPAA compliant AWS services based off of https://aws.amazon.com/compliance/hipaa-eligible-services-reference/.
-- The [root_scp](root_scp/) folder is a modularized grouping of AWS Best Practices to control at the AWS Organizations level.
+- The [security_controls_scp](security_controls_scp/) folder is a modularized grouping of AWS Best Practices to control at the AWS Organizations level.
 - The [pci_scp](pci_scp/) folder is a service control policy that whitelists PCI compliant AWS services based off of https://aws.amazon.com/compliance/services-in-scope/
 
 ### Prerequisites

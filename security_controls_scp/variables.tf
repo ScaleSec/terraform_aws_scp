@@ -1,12 +1,12 @@
 #-----security_controls_scp/variables.tf----#
 
 variable "aws_region" {
-  description = "The AWS region where your master organization account lives."
+  description = "The AWS Region of your HIPAA account(s)"
 }
 
 variable "target_id" {
-  description = "The Target ID to attach the policies to. Can be root, organizational unit, or individual account."
-  }
+  description = "The HIPAA compliant AWS account ID."
+}
 
 variable "shared_credentials_file" {
   description = "The location of aws credentials file. Example: ~/.aws/credentials"

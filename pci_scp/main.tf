@@ -70,7 +70,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "kinesisanalytics:*",
     "kinesisvideo:*",
     "kms:*",
-    "lambda*",
+    "lambda:*",
     "logs:*",
     "macie:*",
     "mq:*",

@@ -1,11 +1,11 @@
 #-----pci_scp/variables.tf-----#
 
 variable "aws_region" {
-  description = "The AWS Region of your PCI account(s)"
+  description = "The AWS Region of your HIPAA account(s)"
 }
 
 variable "pci_account_id" {
-  description = "The PCI compliant AWS account ID."
+  description = "The HIPAA compliant AWS account ID."
 }
 
 variable "shared_credentials_file" {

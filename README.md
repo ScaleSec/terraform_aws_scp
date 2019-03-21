@@ -68,10 +68,6 @@ To Remove the SCPs:
 - An AWS Organization
 - An IAM user with Organization Admin Access
 
-## Notes
-
-The files [hipaa_iam_notes](hipaa_scp/hipaa_iam_notes) and [pci_iam_notes](pci_scp/pci_iam_notes) contain information about IAM policies and HIPAA/PCI services regarding their potential mismatches. Not all IAM policies are granular enough to distinguish between sub-services. Please review these notes to fully understand the limitations of IAM / SCPs in relation to approved services.
-
 ## Limitation of Liability
 
 The service control policies specified in this repo do not guarantee compliance and should be reviewed regularly for updates. ScaleSec is not liable for any regulatory compliance related to these policies. Use at your own risk.

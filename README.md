@@ -33,31 +33,17 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 
 ## Usage
 
-An example main.tf file for Denying the ability to delete CloudTrail Trails:
+An example main.tf for the module to Deny the ability to delete CloudTrail Trails:
 
 ```hcl
-    resource "aws_organizations_policy" "deny_cloudtrail_delete" {
-      name        = "Deny CloudTrail Delete"
-      description = "Deny the ability to delete CloudTrails"
+module "cloudtrail" {
+  source      = "modules/cloudtrail"
 
-      content = <<CONTENT
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Effect": "Deny",
-              "Action": "cloudtrail:DeleteTrail",
-              "Resource": "*"
-          }
-       ]
-    }
-    CONTENT
-    }
-
-    resource "aws_organizations_policy_attachment" "deny_cloudtrail_delete_attachment" {
-      policy_id = "${aws_organizations_policy.deny_cloudtrail_delete.id}"
-      target_id = "${var.target_id}"
-    }
+  target_id = "123456789012"
+  region = "us-east-1"
+  shared_credentials_file = "$~/.aws/credentials"
+  profile = "default"
+}
 ```
 
 To Deploy all of the AWS best practice SCPs (navigate to the root __security_controls_scp__):

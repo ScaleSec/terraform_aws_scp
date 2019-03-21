@@ -40,9 +40,9 @@ module "cloudtrail" {
   source      = "modules/cloudtrail"
 
   target_id = "123456789012"
-  region = "us-east-1"
+  aws_region = "us-east-1"
   shared_credentials_file = "~/.aws/credentials"
-  profile = "default"
+  customprofile = "default"
 }
 ```
 
@@ -58,6 +58,8 @@ To Remove the SCPs:
 
 - __aws_region__ = The AWS Region where your AWS Organization is configured. This is defaulted to us-east-1. Change if necessary.
 - __target_id__ = The Root ID, Organizational Unit ID, or AWS Account ID to apply the SCPs to.
+- __shared_credentials_file__ = The local AWS credentials file.
+- __customprofile__ = The profile to use inside the __shared_credentials_file__.
 
 ## Deployment Dependencies
 

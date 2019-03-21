@@ -22,6 +22,7 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 - If a user or role has an IAM permission policy that grants access to an action that is either not allowed or explicitly denied by the applicable SCPs, the user or role can't perform that action.
 - AWS Organizations use a tree hierarchy for SCPs. This means that if your account is in an Organizational Unit, it inherits that OUs policies.
 - From the documentation:
+
 ![alt text](https://docs.aws.amazon.com/organizations/latest/userguide/images/How_SCP_Permissions_Work.jpg "SCP Ven Diagram")
 
 ## Content

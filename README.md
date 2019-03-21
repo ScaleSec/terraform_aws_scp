@@ -66,7 +66,7 @@ To Deploy all of the AWS best practice SCPs (navigate to the root __security_con
 - `terraform apply` to apply your SCPs.
 
 To Remove the SCPs:
-- `terraform destroy` to destroy the deployed infrastructure.
+- `terraform destroy` to destroy the deployed policies.
 
 ## Inputs / Variables ###
 

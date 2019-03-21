@@ -60,7 +60,7 @@ An example main.tf file for Denying the ability to delete CloudTrail Trails:
     }
 ```
 
-To Deploy all of the AWS best practice SCPs (navigate to the root __security_controls_scp__:
+To Deploy all of the AWS best practice SCPs (navigate to the root __security_controls_scp__):
 - `terraform init` to get the plugins.
 - `terraform plan` to verify your resource planning.
 - `terraform apply` to apply your SCPs.

@@ -82,7 +82,7 @@ To Remomve the SCPs:
 
 ## Notes
 
-The files [hipaa_iam_notes](hipaa_scp/hipaa_iam_notes) and [pci_iam_notes](pci_scp/pci_iam_notes) contain information about IAM policies and HIPAA/PCI services regarding their potential mismatches. Not all IAM policies are granular enough to distinguish between sub-services. Please review these notes to fully understand the limitations of IAM / SCPs in relation to approves services.
+The files [hipaa_iam_notes](hipaa_scp/hipaa_iam_notes) and [pci_iam_notes](pci_scp/pci_iam_notes) contain information about IAM policies and HIPAA/PCI services regarding their potential mismatches. Not all IAM policies are granular enough to distinguish between sub-services. Please review these notes to fully understand the limitations of IAM / SCPs in relation to approved services.
 
 ### Limitation of Liability
 

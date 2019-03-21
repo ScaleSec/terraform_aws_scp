@@ -33,7 +33,7 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 
 ## Usage
 
-An example main.tf for the module to Deny the ability to delete CloudTrail Trails:
+An example main.tf for the module to deny the ability to delete CloudTrail Trails:
 
 ```hcl
 module "cloudtrail" {

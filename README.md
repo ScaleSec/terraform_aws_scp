@@ -41,7 +41,7 @@ module "cloudtrail" {
 
   target_id = "123456789012"
   region = "us-east-1"
-  shared_credentials_file = "$~/.aws/credentials"
+  shared_credentials_file = "~/.aws/credentials"
   profile = "default"
 }
 ```

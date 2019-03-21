@@ -1,6 +1,6 @@
 # hipaa_iam_notes
 
-- Below are notes based off research between IAM permissions and the hipaa service list located here: https://aws.amazon.com/compliance/hipaa-eligible-services-reference/
+- Below are notes based off research between IAM permissions and the HIPAA service list located here: https://aws.amazon.com/compliance/hipaa-eligible-services-reference/
 - Be aware that some services are not granular enough in IAM to distinguish between compliance flavors. IE: ElastiCache redis v memcached.
 
 ### These services are not in IAM 

@@ -56,8 +56,8 @@ To Remove the SCPs:
 
 ## Inputs / Variables ###
 
-- __aws_region__ = The AWS Region where your AWS Organization is configured. This is defaulted to us-east-1. Change if necessary.
-- __target_id__ = The Root ID, Organizational Unit ID, or AWS Account ID to apply the SCPs to.
+- __aws_region__ = The AWS Region where your AWS Organization is configured. This is defaulted to *us-east-1*.
+- __target_id__ = The Root ID, Organizational Unit ID, or AWS Account ID to apply SCPs.
 - __shared_credentials_file__ = The local AWS credentials file.
 - __customprofile__ = The profile to use inside the __shared_credentials_file__.
 

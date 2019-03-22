@@ -1,12 +1,12 @@
 #-----security_controls_scp/variables.tf----#
 
 variable "aws_region" {
-  description = "The AWS Region of your HIPAA account(s)"
+  description = "The AWS Region of your AWS Organization."
   default = "us-east-1"
 }
 
 variable "target_id" {
-  description = "The HIPAA compliant AWS account ID."
+  description = "The Root ID, Organizational Unit ID, or AWS Account ID to apply SCPs."
 }
 
 variable "shared_credentials_file" {

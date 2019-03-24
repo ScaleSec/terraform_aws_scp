@@ -1,6 +1,6 @@
 # .pre-commit-config.yaml
 repos:
--   repo: git@github.com:jdyke/git-secrets.git
+-   repo: git@github.com:ScaleSec/git-secrets.git
     rev: master
     hooks:
     -   id: git-secrets

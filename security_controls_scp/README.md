@@ -2,13 +2,13 @@
 
 ## Service Control Policies (SCPs)
 
-The following SCPs should only be applied once the account has been configured properly. This includes all security tools and IAM permissions. The recommended practice is to create an on-boarding Organizational Unit that has limited permissions to deploy your tools and then move the account into an OU that has the security guardrails attached.
+The following SCPs should only be applied after the account has been configured properly. The pre-configuration includes all security tools and IAM permissions. The recommended best practice is to create an on-boarding Organizational Unit that has limited permissions to deploy your tools and then move the account into an OU that has the security guardrails attached.
 
-## Security Guardrails Deployed
+## Security Guardrails
 
 ### AWS Config
 
-- Denies the ability to delete Config rules and stop recording. 
+- Denies the ability to delete AWS Config rules and stop recording. 
 - AWS Config is a service to monitor your resources for point-in-time configuration updates and compliance monitoring. 
 - Malicious actors may try to stop AWS Config recording and perform destructive behavior so it is important to deny AWS Config deletions.
 

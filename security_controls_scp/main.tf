@@ -33,3 +33,24 @@ module "guardduty" {
   
   target_id = "${var.target_id}"
 }
+
+## Deploy S3 AWS Org Policies
+module "s3" {
+  source      = "modules/s3"
+  
+  target_id = "${var.target_id}"
+}
+
+## Deploy EC2 AWS Org Policies
+module "ec2" {
+  source      = "modules/ec2"
+  
+  target_id = "${var.target_id}"
+}
+
+## Deploy AWS Organizations SCPs
+module "organizations" {
+  source      = "modules/organizations"
+  
+  target_id = "${var.target_id}"
+}

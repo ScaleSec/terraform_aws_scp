@@ -4,14 +4,14 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 
 ## About Service Control Policies
 
-- For complete documentation about SCPs, visit the official documentation [here](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) and [here.](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html)
-- SCPs enable you to restrict, at the account level of granularity, what services and actions the users, groups, and roles in those accounts can do.
+- For official documentation about SCPs, visit the links [here](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) and [here.](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html)
+- SCPs enable you to restrict, at the account level of granularity, what services and actions the users, groups and roles in those accounts can do.
 - SCPs are available only in an organization that has all features enabled. SCPs aren't available if your organization has enabled only the consolidated billing features.
 
 ## Considerations
 
 - Best practice is to never attach SCPs to the root of your organization. Instead, create an Organizational Unit (OU) underneath root and attach policies there.
-- SCPs do not grant individual permissions but instead whitelist or blacklist services that are allowed to be accessed or blocked. 
+- SCPs do not grant permissions in IAM but instead whitelist/blacklist services or set security guardrails.
 - Root user accounts are affected by SCPs.
 - You must have at least one SCP attached to each entity.
 - Maximum of 5 SCPs can be attached to the root, OU, or Account in an organization.

@@ -27,9 +27,9 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 
 ## Content
 
-- The [hipaa_scp](hipaa_scp/) folder is a service control policy that whitelists HIPAA compliant AWS services based off of https://aws.amazon.com/compliance/hipaa-eligible-services-reference/.
 - The [security_controls_scp](security_controls_scp/) folder is a modularized grouping of AWS Security Best Practices to control at the AWS Organizations level.
-- The [pci_scp](pci_scp/) folder is a service control policy that whitelists PCI compliant AWS services based off of https://aws.amazon.com/compliance/services-in-scope/
+- __[Future Functionality]__ The [hipaa_scp](hipaa_scp/) folder is a service control policy that whitelists HIPAA compliant AWS services based off of https://aws.amazon.com/compliance/hipaa-eligible-services-reference/.
+- __[Future Functionality]__ The [pci_scp](pci_scp/) folder is a service control policy that whitelists PCI compliant AWS services based off of https://aws.amazon.com/compliance/services-in-scope/
 
 ## Usage
 
@@ -56,10 +56,12 @@ To Remove the SCPs:
 
 ## Inputs / Variables ###
 
-- __aws_region__ = The AWS Region where your AWS Organization is configured. This is defaulted to *us-east-1*.
-- __target_id__ = The Root ID, Organizational Unit ID, or AWS Account ID to apply SCPs.
-- __shared_credentials_file__ = The local AWS credentials file.
-- __customprofile__ = The profile to use inside the __shared_credentials_file__.
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| aws\_region | The AWS Region where your AWS Organization is configured. | string | `"us-east-1"` | yes |
+| target\_id | The Root ID, Organizational Unit ID, or AWS Account ID to apply SCPs. | string | `"N/A"` | yes |
+| shared\_credentials\_file | The local AWS credentials file. | string | `"N/A"` | yes |
+| customprofile | The profile to use inside the __shared_credentials_file__. | string | `"N/A"` | yes |
 
 ## Deployment Dependencies
 
@@ -70,4 +72,4 @@ To Remove the SCPs:
 
 ## Limitation of Liability
 
-The service control policies specified in this repo do not guarantee compliance and should be reviewed regularly for updates. ScaleSec is not liable for any regulatory compliance related to these policies. Use at your own risk.
+The service control policies specified in this repo do not guarantee compliance and should be reviewed regularly for updates. ScaleSec is not liable for any regulatory compliance or account/resource damage related to these policies. Use at your own risk.

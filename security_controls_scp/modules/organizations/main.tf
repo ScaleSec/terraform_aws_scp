@@ -10,7 +10,7 @@ resource "aws_organizations_policy" "deny_orgs_leave" {
     {
       "Effect": "Deny",
       "Action": "organizations:LeaveOrganization",
-      "Resource": "*",
+      "Resource": "*"
     }
   ]
 }

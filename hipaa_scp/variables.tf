@@ -2,7 +2,7 @@
 
 variable "aws_region" {
   description = "The AWS Region of your AWS Organization."
-  default = "us-east-1"
+  default     = "us-east-1"
 }
 
 variable "target_id" {

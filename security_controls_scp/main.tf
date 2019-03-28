@@ -54,3 +54,17 @@ module "organizations" {
 
   target_id = "${var.target_id}"
 }
+
+## Deploy IAM AWS Org Policies
+module "iam" {
+  source = "modules/iam"
+
+  target_id = "${var.target_id}"
+}
+
+## Deploy Shield AWS Org Policies
+module "shield" {
+  source = "modules/shield"
+
+  target_id = "${var.target_id}"
+}

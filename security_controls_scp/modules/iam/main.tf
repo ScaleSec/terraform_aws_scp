@@ -2,8 +2,12 @@
 resource "aws_organizations_policy" "require_mfa_all" {
   name        = "Deny all Actions w/o MFA"
   description = "If user does not have MFA, they cannot perform actions"
-#This policy comes from "DenyAllExceptListedIfNoMFA" https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html
+
+  #This policy comes from "DenyAllExceptListedIfNoMFA" https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html
   content = <<CONTENT
+{
+  "Version": "2012-10-17",
+  "Statement": [
         {
             "Effect": "Deny",
             "NotAction": [

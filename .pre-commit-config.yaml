@@ -1,8 +1,0 @@
-# .pre-commit-config.yaml
-repos:
--   repo: git@github.com:ScaleSec/git-secrets.git
-    rev: master
-    hooks:
-    -   id: git-secrets
-    always_run: true
-    files: templates/.*\.(json|yml|yaml)$

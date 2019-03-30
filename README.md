@@ -70,6 +70,19 @@ To Remove the SCPs:
 - An AWS Organization
 - An IAM user with Organization Admin Access
 
-## Limitation of Liability
+## License
 
-The service control policies specified in this repo do not guarantee compliance and should be reviewed regularly for updates. ScaleSec is not liable for any regulatory compliance or account/resource damage related to these policies. Use at your own risk.
+   Copyright 2019 ScaleSec
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+

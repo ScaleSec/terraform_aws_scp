@@ -28,10 +28,10 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 ## Content
 
 - The [security_controls_scp](security_controls_scp/) folder is a modularized grouping of AWS Security Best Practices to control at the AWS Organizations level.
--- _NOTICE_ Due to the limitations of Service Control Policies, only a max of 5 can be attached at one time. With that in mind, you cannot apply ALL of the security controls at once. They will attempt to attach to one target ID and will fail. You have a couple of options:
---- Select and move the JSON policies you want into one large `aws_organizations_policy` and apply.
---- Pick and choose 5 modules to deploy and remove the others.
---- Remove `aws_organizations_policy_attachment` from the modules' `main.tf` file and apply. You would then need to manually apply the SCPs.
+  - _NOTICE_ Due to the limitations of Service Control Policies, only a max of 5 can be attached at one time. With that in mind, you cannot apply ALL of the security controls at once. They will attempt to attach to one target ID and will fail. You have a couple of options:
+    -  Select and move the JSON policies you want into one large `aws_organizations_policy` and apply.
+    - Pick and choose 5 modules to deploy and remove the others.
+    - Remove `aws_organizations_policy_attachment` from the modules' `main.tf` file and apply. You would then need to manually apply the SCPs.
 - __[Future Functionality]__ The [hipaa_scp](hipaa_scp/) folder is a service control policy that whitelists HIPAA compliant AWS services based off of https://aws.amazon.com/compliance/hipaa-eligible-services-reference/.
 - __[Future Functionality]__ The [pci_scp](pci_scp/) folder is a service control policy that whitelists PCI compliant AWS services based off of https://aws.amazon.com/compliance/services-in-scope/
 

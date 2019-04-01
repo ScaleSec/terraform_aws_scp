@@ -62,7 +62,7 @@ To Remove the SCPs:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| aws\_region | The AWS Region where your AWS Organization is configured. | string | `"us-east-1"` | yes |
+| aws\_region | The AWS Region where your AWS Organization is configured. | string | `"us-east-1"` | no |
 | target\_id | The Root ID, Organizational Unit ID, or AWS Account ID to apply SCPs. | string | `"N/A"` | yes |
 | shared\_credentials\_file | The local AWS credentials file. | string | `"N/A"` | yes |
 | customprofile | The profile to use inside the __shared_credentials_file__. | string | `"N/A"` | yes |

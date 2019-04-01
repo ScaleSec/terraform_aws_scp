@@ -74,6 +74,17 @@ To Remove the SCPs:
 - An AWS Organization
 - An IAM user with Organization Admin Access
 
+## Common Errors 
+
+#### Enabled Policy Types
+
+```
+error creating Organizations Policy Attachment: PolicyTypeNotEnabledException: This operation can be performed only for enabled policy types.  
+status code: 400, request id: 5b5ecfed-54b3-11e9-84fb-279c76986eec
+```
+
+SCP functionality must be enabled on the root.  See https://github.com/terraform-providers/terraform-provider-aws/issues/4545 for more information 
+
 ## Limitation of Liability
 
 Please view the [License](LICENSE) for limitations of liability. 

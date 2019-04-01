@@ -1,10 +1,3 @@
-#-----pci_scp/main.tf-----#
-
-provider "aws" {
-  region                  = "${var.aws_region}"
-  shared_credentials_file = "${var.shared_credentials_file}"
-  profile                 = "${var.customprofile}"
-}
 
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 resource "aws_organizations_policy" "allow_pci_services" {

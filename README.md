@@ -62,7 +62,7 @@ To Remove the SCPs:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| aws\_region | The AWS Region where your AWS Organization is configured. | string | `"us-east-1"` | yes |
+| aws\_region | The AWS Region where your AWS Organization is configured. | string | `"us-east-1"` | no |
 | target\_id | The Root ID, Organizational Unit ID, or AWS Account ID to apply SCPs. | string | `"N/A"` | yes |
 | shared\_credentials\_file | The local AWS credentials file. | string | `"N/A"` | yes |
 | customprofile | The profile to use inside the __shared_credentials_file__. | string | `"N/A"` | yes |
@@ -73,6 +73,17 @@ To Remove the SCPs:
 - [terraform-provider-aws](https://github.com/terraform-providers/terraform-provider-aws)
 - An AWS Organization
 - An IAM user with Organization Admin Access
+
+## Common Errors 
+
+#### Enabled Policy Types
+
+```
+error creating Organizations Policy Attachment: PolicyTypeNotEnabledException: This operation can be performed only for enabled policy types.  
+status code: 400, request id: 5b5ecfed-54b3-11e9-84fb-279c76986eec
+```
+
+SCP functionality must be enabled on the root.  See https://github.com/terraform-providers/terraform-provider-aws/issues/4545 for more information 
 
 ## Limitation of Liability
 

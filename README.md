@@ -78,10 +78,19 @@ To Remove the SCPs:
 
 ```
 error creating Organizations Policy Attachment: PolicyTypeNotEnabledException: This operation can be performed only for enabled policy types.  
-status code: 400, request id: 5b5ecfed-54b3-11e9-84fb-279c76986eec
+status code: 400, request id: 2b8ecgeb-34h3-11e6-86fb-275c76986dec
 ```
 
 SCP functionality must be enabled on the root.  See https://github.com/terraform-providers/terraform-provider-aws/issues/4545 for more information 
+
+#### Minimum SCP Requirement
+
+```
+aws_organizations_policy_attachment.deny_orgs_leave_attachment: ConstraintViolationException: You cannot remove the last policy attached to the specified target. You must have at least one attached at all times.
+status code: 400, request id: 2d6c75b3-5757-13e9-ab76-518b756aebd3
+```
+
+You must have one SCP attached to an account or OU at all times. See: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html for more information.
 
 ## Limitation of Liability
 

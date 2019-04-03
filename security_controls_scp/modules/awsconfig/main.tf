@@ -4,18 +4,20 @@ data "aws_iam_policy_document" "deny_aws_config_rules_delete" {
     sid = "DenyConfigRulesDelete"
 
     actions = [
-        "config:DeleteConfigRule",
-        "config:DeleteConfigurationRecorder",
-        "config:DeleteDeliveryChannel",
-        "config:StopConfigurationRecorder",
-        "config:DeleteRetentionConfiguration",
-        "config:DeleteEvaluationResults",
-        "config:DeleteConfigurationAggregator",
-      ]
+      "config:DeleteConfigRule",
+      "config:DeleteConfigurationRecorder",
+      "config:DeleteDeliveryChannel",
+      "config:StopConfigurationRecorder",
+      "config:DeleteRetentionConfiguration",
+      "config:DeleteEvaluationResults",
+      "config:DeleteConfigurationAggregator",
+    ]
+
     resources = [
       "*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
   }
 }
 

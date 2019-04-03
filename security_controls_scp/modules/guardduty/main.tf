@@ -4,14 +4,17 @@ data "aws_iam_policy_document" "deny_guardduty_disassociate" {
     sid = "DenyGuardDutyDisassociation"
 
     actions = [
-        "guardduty:DisassociateFromMasterAccount",
-      ]
+      "guardduty:DisassociateFromMasterAccount",
+    ]
+
     resources = [
       "*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
   }
 }
+
 resource "aws_organizations_policy" "deny_guardduty_disassociate" {
   name        = "Deny GuardDuty Disassociation"
   description = "Deny the ability to disassociate a GuardDuty member."

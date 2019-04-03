@@ -5,18 +5,21 @@ data "aws_iam_policy_document" "deny_shield_removal" {
     sid = "DenyShieldlRemoval"
 
     actions = [
-                "shield:DeleteProtection",
-                "shield:DeleteSubscription",
-                "shield:DisassociateDRTLogBucket",
-                "shield:DisassociateDRTRole",
-                "shield:UpdateEmergencyContactSettings",
-            ],
+      "shield:DeleteProtection",
+      "shield:DeleteSubscription",
+      "shield:DisassociateDRTLogBucket",
+      "shield:DisassociateDRTRole",
+      "shield:UpdateEmergencyContactSettings",
+    ]
+
     resources = [
       "*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
   }
 }
+
 resource "aws_organizations_policy" "deny_shield_removal" {
   name        = "Deny Shield Deletes"
   description = "Deny users from deleting shield protection"

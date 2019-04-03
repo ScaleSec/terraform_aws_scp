@@ -5,17 +5,19 @@ data "aws_iam_policy_document" "deny_vpc_flow_logs_delete" {
     sid = "DenyVpcFlowDelete"
 
     actions = [
-        "ec2:DeleteFlowLogs",
-        "logs:DeleteLogGroup",
-        "logs:DeleteLogStream"
-      ],
+      "ec2:DeleteFlowLogs",
+      "logs:DeleteLogGroup",
+      "logs:DeleteLogStream",
+    ]
 
     resources = [
       "*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
   }
 }
+
 resource "aws_organizations_policy" "deny_vpc_flow_logs_delete" {
   name        = "Deny Flow Logs Deletion"
   description = "Deny the ability to delete VPC Flow Logs"

@@ -8,7 +8,7 @@ provider "aws" {}
 #}
 
 ## Deploy VPC AWS Org Policies
- module "vpc" {
+module "vpc" {
   source = "modules/vpc"
 
   target_id = "${var.target_id}"
@@ -18,7 +18,7 @@ provider "aws" {}
 #module "awsconfig" {
 #  source = "modules/awsconfig"
 
- # target_id = "${var.target_id}"
+# target_id = "${var.target_id}"
 #}
 
 ## Deploy GuardDuty AWS Org Policies
@@ -30,16 +30,16 @@ provider "aws" {}
 
 ## Deploy S3 AWS Org Policies
 module "s3" {
-source = "modules/s3"
+  source = "modules/s3"
 
   target_id = "${var.target_id}"
 }
 
 ## Deploy EC2 AWS Org Policies
 #module "ec2" {
- # source = "modules/ec2"
+# source = "modules/ec2"
 
- # target_id = "${var.target_id}"
+# target_id = "${var.target_id}"
 #}
 
 ## Deploy AWS Organizations SCPs
@@ -50,9 +50,9 @@ source = "modules/s3"
 #}
 
 #module "iam" {
- #source = "modules/iam"
+#source = "modules/iam"
 
- # target_id = "${var.target_id}"
+# target_id = "${var.target_id}"
 #}
 
 ## Deploy Shield AWS Org Policies

@@ -6,11 +6,13 @@ data "aws_iam_policy_document" "require_mfa_ec2_actions" {
     actions = [
       "ec2:StopInstances",
       "ec2:TerminateInstances",
-      ]
+    ]
+
     resources = [
       "*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
 
     condition {
       test     = "BoolIfExists"
@@ -21,7 +23,8 @@ data "aws_iam_policy_document" "require_mfa_ec2_actions" {
       ]
     }
   }
-  }
+}
+
 resource "aws_organizations_policy" "require_mfa_ec2_actions" {
   name        = "Require MFA EC2 Actions"
   description = "Require MFA Stopping or Deleting EC2 Instances"

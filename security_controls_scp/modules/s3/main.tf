@@ -6,11 +6,13 @@ data "aws_iam_policy_document" "deny_unencrypted_uploads" {
 
     actions = [
       "s3:PutObject",
-      ]
+    ]
+
     resources = [
       "arn:aws:s3:::*/*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
 
     condition {
       test     = "Null"
@@ -21,7 +23,8 @@ data "aws_iam_policy_document" "deny_unencrypted_uploads" {
       ]
     }
   }
-  }
+}
+
 resource "aws_organizations_policy" "deny_unencrypted_uploads" {
   name        = "Deny Unencrypted S3 Uploads"
   description = "Deny the ability to upload an unencrypted S3 Object."
@@ -40,11 +43,13 @@ data "aws_iam_policy_document" "deny_unsecure_s3_requests" {
 
     actions = [
       "s3:*",
-      ]
+    ]
+
     resources = [
       "arn:aws:s3:::*/*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
 
     condition {
       test     = "Bool"
@@ -55,7 +60,7 @@ data "aws_iam_policy_document" "deny_unsecure_s3_requests" {
       ]
     }
   }
-  }
+}
 
 resource "aws_organizations_policy" "deny_unsecure_s3_requests" {
   name        = "Deny Unsecure SSL Requests to S3"
@@ -75,11 +80,13 @@ data "aws_iam_policy_document" "require_mfa_s3_delete" {
 
     actions = [
       "s3:DeleteObject",
-      ]
+    ]
+
     resources = [
       "arn:aws:s3:::*/*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
 
     condition {
       test     = "BoolIfExists"
@@ -90,7 +97,7 @@ data "aws_iam_policy_document" "require_mfa_s3_delete" {
       ]
     }
   }
-  }
+}
 
 resource "aws_organizations_policy" "require_mfa_s3_delete" {
   name        = "Require MFA To Delete Objects"

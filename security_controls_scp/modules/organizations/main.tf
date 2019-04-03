@@ -5,14 +5,17 @@ data "aws_iam_policy_document" "deny_orgs_leave" {
     sid = "DenyOrgLeave"
 
     actions = [
-        "organizations:LeaveOrganization",
-      ]
+      "organizations:LeaveOrganization",
+    ]
+
     resources = [
       "*",
     ]
-    effect  = "Deny"
+
+    effect = "Deny"
   }
 }
+
 resource "aws_organizations_policy" "deny_orgs_leave" {
   name        = "Deny Org Account Leave"
   description = "Deny an Account from Leaving an AWS Org"

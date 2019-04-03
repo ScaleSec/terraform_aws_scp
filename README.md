@@ -94,8 +94,7 @@ You must have one SCP attached to an account or OU at all times. See: https://do
 
 #### Conflicting Policy Attachment
 
-```error creating Organizations Policy Attachment: ConcurrentModificationException: AWS Organizations can't complete your request because it conflicts with another attempt to modify the same entity. Try again later.
-	status code: 400, request id: h725f9g7-1234-12e9-h746-ch123ab12345
+```error creating Organizations Policy Attachment: ConcurrentModificationException: AWS Organizations can't complete your request because it conflicts with another attempt to modify the same entity. Try again later. status code: 400, request id: h725f9g7-1234-12e9-h746-ch123ab12345
 ```
 
 Occasionally, if you try to assign many SCPs to one target at the same time, it could error out. If you see this error simply run `terraform apply` again.

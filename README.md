@@ -92,6 +92,14 @@ status code: 400, request id: 2d6c75b3-5757-13e9-ab76-518b756aebd3
 
 You must have one SCP attached to an account or OU at all times. See: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html for more information.
 
+#### Conflicting Policy Attachment
+
+```error creating Organizations Policy Attachment: ConcurrentModificationException: AWS Organizations can't complete your request because it conflicts with another attempt to modify the same entity. Try again later.
+	status code: 400, request id: h725f9g7-1234-12e9-h746-ch123ab12345
+```
+
+Occasionally, if you try to assign many SCPs to one target at the same time, it could error out. If you see this error simply run `terraform apply` again.
+
 ## Limitation of Liability
 
 Please view the [License](LICENSE) for limitations of liability. 

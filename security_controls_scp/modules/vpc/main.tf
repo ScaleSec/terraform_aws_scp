@@ -1,24 +1,26 @@
 #-----security_controls_scp/modules/vpc/main.tf----#
-resource "aws_organizations_policy" "deny_vpc_flow_logs_delete" {
-  name        = "Deny Flow Logs Deletion"
-  description = "Deny the ability to delete VPC Flow Logs"
 
-  content = <<CONTENT
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Deny",
-      "Action": [
+data "aws_iam_policy_document" "deny_vpc_flow_logs_delete" {
+  statement {
+    sid = "DenyVpcFlowDelete"
+
+    actions = [
         "ec2:DeleteFlowLogs",
         "logs:DeleteLogGroup",
         "logs:DeleteLogStream"
       ],
-      "Resource": "*"
-    }
-  ]
- }
-CONTENT
+
+    resources = [
+      "*",
+    ]
+    effect  = "Deny"
+  }
+}
+resource "aws_organizations_policy" "deny_vpc_flow_logs_delete" {
+  name        = "Deny Flow Logs Deletion"
+  description = "Deny the ability to delete VPC Flow Logs"
+
+  content = "${data.aws_iam_policy_document.deny_vpc_flow_logs_delete.json}"
 }
 
 resource "aws_organizations_policy_attachment" "deny_vpc_flow_logs_delete_attachment" {

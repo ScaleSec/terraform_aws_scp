@@ -1,28 +1,29 @@
 #-----security_controls_scp/modules/awsconfig/main.tf----#
-resource "aws_organizations_policy" "deny_aws_config_rules_delete" {
-  name        = "Deny Config Rules Delete"
-  description = "Deny the ability to delete AWS Config Rules"
+data "aws_iam_policy_document" "deny_aws_config_rules_delete" {
+  statement {
+    sid = "DenyConfigRulesDelete"
 
-  content = <<CONTENT
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Deny",
-      "Action": [
+    actions = [
         "config:DeleteConfigRule",
         "config:DeleteConfigurationRecorder",
         "config:DeleteDeliveryChannel",
         "config:StopConfigurationRecorder",
         "config:DeleteRetentionConfiguration",
         "config:DeleteEvaluationResults",
-        "config:DeleteConfigurationAggregator"
-      ],
-      "Resource": "*"
-    }
-  ]
+        "config:DeleteConfigurationAggregator",
+      ]
+    resources = [
+      "*",
+    ]
+    effect  = "Deny"
+  }
 }
-CONTENT
+
+resource "aws_organizations_policy" "deny_aws_config_rules_delete" {
+  name        = "Deny Config Rules Delete"
+  description = "Deny the ability to delete AWS Config Rules"
+
+  content = "${data.aws_iam_policy_document.deny_aws_config_rules_delete.json}"
 }
 
 resource "aws_organizations_policy_attachment" "deny_aws_config_rules_delete_attachment" {

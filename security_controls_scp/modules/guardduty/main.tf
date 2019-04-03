@@ -1,20 +1,25 @@
 #-----security_controls_scp/modules/guardduty/main.tf----#
+data "aws_iam_policy_document" "deny_guardduty_disassociate" {
+  statement {
+    sid = "DenyGuardDutyDisassociation"
+
+    actions = [
+      "guardduty:DisassociateFromMasterAccount",
+    ]
+
+    resources = [
+      "*",
+    ]
+
+    effect = "Deny"
+  }
+}
+
 resource "aws_organizations_policy" "deny_guardduty_disassociate" {
   name        = "Deny GuardDuty Disassociation"
   description = "Deny the ability to disassociate a GuardDuty member."
 
-  content = <<CONTENT
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-            "Effect": "Deny",
-            "Action": "guardduty:DisassociateFromMasterAccount",
-            "Resource": "*"
-    }
-  ]
- }
-CONTENT
+  content = "${data.aws_iam_policy_document.deny_guardduty_disassociate.json}"
 }
 
 resource "aws_organizations_policy_attachment" "deny_guardduty_disassociate_attachment" {

@@ -1,3 +1,5 @@
+provider "aws" {}
+
 ## Deploy CloudTrail AWS Org Policies
 module "cloudtrail" {
   source = "modules/cloudtrail"
@@ -47,7 +49,7 @@ module "organizations" {
   target_id = "${var.target_id}"
 }
 
-## Deploy IAM AWS Org Policies
+## Deploy IAM Aws Org SCPs
 module "iam" {
   source = "modules/iam"
 

@@ -2,7 +2,7 @@
 
 data "aws_iam_policy_document" "deny_unencrypted_uploads" {
   statement {
-    sid = "DenyUnencrypedUploads"
+    sid = "DenyUnencryptedUploads"
 
     actions = [
       "s3:PutObject",

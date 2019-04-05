@@ -6,6 +6,12 @@ The following SCPs should only be applied after the account has been configured 
 
 ## Security Guardrails
 
+### Account
+
+- Denies the ability to enable or disable a region.
+- By default, when new regions are enabled by AWS, you now have to enable that region before IAM will propogate. 
+- This policy can be used to lock down the ability to launch resources in unapproved regions or deny a malicious actor from disabling a region in your account. 
+
 ### AWS Config
 
 - Denies the ability to delete AWS Config rules and stop recording. 

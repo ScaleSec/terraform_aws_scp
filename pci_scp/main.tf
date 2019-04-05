@@ -1,4 +1,3 @@
-
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 resource "aws_organizations_policy" "allow_pci_services" {
   name        = "Allow PCI Services"

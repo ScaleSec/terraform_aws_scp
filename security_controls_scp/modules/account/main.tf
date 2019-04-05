@@ -16,8 +16,8 @@ data "aws_iam_policy_document" "deny_region_interaction" {
     effect = "Deny"
   }
 }
-resource "aws_organizations_policy" "deny_region_interaction" {
 
+resource "aws_organizations_policy" "deny_region_interaction" {
   name        = "Deny Region Interaction"
   description = "Deny the ability to enable or disable a region."
 

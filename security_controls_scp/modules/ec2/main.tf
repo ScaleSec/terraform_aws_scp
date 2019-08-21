@@ -6,6 +6,7 @@ data "aws_iam_policy_document" "require_mfa_ec2_actions" {
     actions = [
       "ec2:StopInstances",
       "ec2:TerminateInstances",
+      "ec2:SendDiagnosticInterrupt",
     ]
 
     resources = [

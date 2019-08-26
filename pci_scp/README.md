@@ -5,7 +5,7 @@
 
 ### These services are not in IAM 
 
-The following services are highlighted as PCI compliant but are either not in IAM or are covered by another service's IAM permissions. For example, Amazon DocumentDB is highlighted as its own service but is covered by `rds:*`.
+The following services are highlighted as PCI compliant but are either not in the IAM console or are covered by another service's IAM permissions. For example, Amazon DocumentDB is highlighted as its own service but is covered by `rds:*`.
 
 - Amazon DocumentDB (with MongoDB compatibility)
 - Amazon Forecast

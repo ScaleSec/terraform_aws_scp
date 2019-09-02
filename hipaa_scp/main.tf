@@ -1,7 +1,7 @@
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/hipaa-eligible-services-reference/
 resource "aws_organizations_policy" "allow_hipaa_services" {
   name        = "Allow HIPAA Services"
-  description = "Only allow HIPAA services as of 3/5/2019"
+  description = "Only allow HIPAA BAA compliant services as of 8/22/2019"
 
   content = <<CONTENT
 {
@@ -12,12 +12,14 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "Action": [
     "amplify:*",
     "apigateway:*",
+    "appstream:*",
     "appsync:*",
     "athena:*",
-    "autoscaling:*",
+    "autoscaling-plans:*",
     "backup:*",
     "batch:*",
     "acm:*",
+    "chime:*",
     "cloudformation:*",
     "cloudfront:*",
     "cloudhsm:*",
@@ -35,10 +37,12 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "datasync:*",
     "directconnect:*",
     "dms:*",
+    "ds:*",
     "dynamodb:*",
     "ec2:*",
     "ecr:*",
     "ecs:*",
+    "elasticache:*",
     "elasticbeanstalk:*",
     "elasticfilesystem:*",
     "eks:*",
@@ -58,16 +62,26 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "importexport:*",
     "inspector:*",
     "iot:*",
+    "iotevents:*",
+    "kafka:*",
     "kinesis:*",
     "kinesisanalytics:*",
     "kinesisvideo:*",
     "kms:*",
+    "lakeformation:*",
     "lambda:*",
     "logs:*",
     "macie:*",
+    "mediaconnect:*",
+    "mediaconvert:*",
+    "medialive:*",
+    "mobiletargeting:*",
     "mq:*",
     "neptune-db:*",
     "opsworks:*",
+    "opsworks-cm:*",
+    "organizations:*",
+    "personalize:*",
     "polly:*",
     "quicksight:*",
     "rekognition:*",
@@ -80,6 +94,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "securityhub:*",
     "servicecatalog:*",
     "serverlessrepo:*",
+    "ses:*",
     "sms:*",
     "shield:*",
     "sms:*",

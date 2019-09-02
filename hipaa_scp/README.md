@@ -22,6 +22,6 @@ There are HIPAA BAA compliant services or programs that do not map directly to I
 
 ### Known Incompatabilities
 
-- __Amazon SageMaker [excluding Public Workforce and Vendor Workforce].__ Sagemaker does not handle permissions on a worksforce level. `sagemaker:*` was added to the allowed list in the SCP.
+- __Amazon SageMaker [excluding Public Workforce and Vendor Workforce].__ Sagemaker does not handle permissions on a workforce level. `sagemaker:*` was added to the allowed list in the SCP.
 - __Amazon ElastiCache (Redis).__ IAM Permissions for elasticache does not differentiate between memcached and redis. `elasticache:*` was added to the allowed list in the SCP which allows non-compliant memcached instances.
 - __AWS Directory Services excluding Simple AD and AD Connector.__ IAM permissions do not differentiate between AD Connector and Simple AD. `ds:*` was added to the allowed list in the SCP which allows non-compliant Simple AD and AD Connector. 

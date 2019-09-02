@@ -14,7 +14,6 @@ The following services are highlighted as PCI compliant but are either not in th
 - AWS Lambda@Edge
 - AWS Managed Services
 - AWS SDK Metrics
-- AWS Security Hub
 - AWS Snowball Edge
 - AWS Snowmobile
 

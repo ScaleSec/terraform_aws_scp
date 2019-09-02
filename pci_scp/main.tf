@@ -91,6 +91,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "sagemaker:*",
     "sdb:*",
     "secretsmanager:*",
+    "securityhub:*",
     "servicecatalog:*",
     "serverlessrepo:*",
     "sms:*",

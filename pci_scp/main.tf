@@ -118,9 +118,11 @@ resource "aws_organizations_policy" "allow_pci_services" {
   ]
 }
 CONTENT
+
 }
 
 resource "aws_organizations_policy_attachment" "allow_pci_services_attachment" {
-  policy_id = "${aws_organizations_policy.allow_pci_services.id}"
-  target_id = "${var.target_id}"
+  policy_id = aws_organizations_policy.allow_pci_services.id
+  target_id = var.target_id
 }
+

@@ -67,7 +67,7 @@ To Remove the SCPs:
 
 ## Deployment Dependencies
 
-- [Terraform](https://www.terraform.io/downloads.html)
+- [Terraform v12](https://www.terraform.io/downloads.html)
 - [terraform-provider-aws](https://github.com/terraform-providers/terraform-provider-aws)
 - An AWS Organization
 - An IAM user with Organization Admin Access

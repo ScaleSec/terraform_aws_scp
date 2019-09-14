@@ -3,19 +3,25 @@
 - Below are notes based off research between IAM permissions and the PCI service list located here: https://aws.amazon.com/compliance/services-in-scope/.
 - Be aware that some services are not granular enough in IAM to distinguish between compliance flavors. IE: ElastiCache redis v memcached.
 
-### These services are not in IAM 
+### PCI-DSS to IAM Mapping
 
-The following services are highlighted as PCI compliant but are either not in the IAM console or are covered by another service's IAM permissions. For example, Amazon DocumentDB is highlighted as its own service but is covered by `rds:*`.
+There are PCI-DSS compliant services or programs that do not map directly to IAM permissions or the API/SDK one to one. In addition, some of the IAM permissions are not yet supported in the console but do have an API authorized via IAM permissions. The below table attempts to consolidate the inconsistencies.
 
-- Amazon DocumentDB (with MongoDB compatibility)
-- Amazon Forecast
-- Amazon S3 Transfer Acceleration
-- AWS Control Tower
-- AWS Lambda@Edge
-- AWS Managed Services
-- AWS SDK Metrics
-- AWS Snowball Edge
-- AWS Snowmobile
+| Service/Program | API/CLI/SDK | Supported in Console |
+|-----------------|---------|----------------------|
+| Amazon CloudWatch SDK Metrics | `cloudwatch` | True |
+| Amazon DocumentDB (with MongoDB compatibility) | `rds` | True |
+| Amazon Elastic Block Store (EBS) | `ec2` | True |
+| Amazon Forecast | `forecast` | __False__ |
+| Amazon S3 Transfer Acceleration | `s3transferacceleration` | False |
+| Amazon Virtual Private Cloud (VPC) | `ec2` | True |
+| AWS Control Tower | __N/A__ | __N/A__ |
+| AWS Managed Services | __N/A__ | __N/A__ |
+| AWS Snowball Edge | `snowball` | True |
+| AWS Snowmobile | `snowball` | True |
+| AWS VM Import/Export** | __N/A__ | __N/A__ |
+
+** VM Import/Export does not have a specific API/SDK but instead uses a combination of `ec2` and `s3`.
 
 ### Known Incompatabilities
 

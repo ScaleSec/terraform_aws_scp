@@ -5,9 +5,9 @@
 
 ### HIPAA BAA to IAM Mapping
 
-There are HIPAA BAA compliant services or programs that do not map directly to IAM permissions or the API one to one. In addition, some of the IAM permissions are not yet supported in the console but do have an API authorized via IAM permissions. The below table attempts to consolidate the inconsistencies.
+There are HIPAA BAA compliant services or programs that do not map directly to IAM permissions or the API/SDK one to one. In addition, some of the IAM permissions are not yet supported in the console but do have an API authorized via IAM permissions. The below table attempts to consolidate the inconsistencies.
 
-| Service/Program | API/CLI | Supported in Console |
+| Service/Program | API/CLI/SDK | Supported in Console |
 |-----------------|---------|----------------------|
 | Amazon Aurora (MySQL,PostgreSQL) | `rds` | True |
 | Amazon CloudWatch SDK Metrics | `cloudwatch` | True |
@@ -18,7 +18,9 @@ There are HIPAA BAA compliant services or programs that do not map directly to I
 | AWS Managed Services | __N/A__ | __N/A__ |
 | AWS Snowball Edge | `snowball` | True |
 | AWS Snowmobile | `snowball` | True |
-| AWS VM Import/Export | __N/A__ | __N/A__ |
+| AWS VM Import/Export** | __N/A__ | __N/A__ |
+
+** VM Import/Export does not have a specific API/SDK but instead uses a combination of `ec2` and `s3`.
 
 ### Known Incompatabilities
 

@@ -127,11 +127,11 @@ data "aws_iam_policy_document" "deny_public_access_points_document" {
     effect = "Deny"
 
     condition {
-      test     = "StringNotEquals"
+      test     = "StringNotEqualsIfExists"
       variable = "s3:AccessPointNetworkOrigin"
 
       values = [
-        "VPC",
+        "vpc",
       ]
     }
   }

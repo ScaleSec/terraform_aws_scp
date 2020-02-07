@@ -48,10 +48,11 @@ The following SCPs should only be applied after the account has been configured 
 
 ### S3
 
-- Requires all S3 Uploads to use Encryption at Rest.
-- Denies non-TLS S3 Requests
-- Requires MFA When Deleting Objects
 - Recommended best practice is to encrypt everything in s3. These rules require encryption at rest and in transit.
+    - Requires all S3 Uploads to use Encryption at Rest.
+    - Denies non-TLS S3 Requests
+- Requires MFA When Deleting Objects
+- Denies the creation of publicly facing [Access Points](https://aws.amazon.com/s3/features/access-points/).
 
 ### AWS Shield
 

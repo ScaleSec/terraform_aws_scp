@@ -6,7 +6,7 @@ data "aws_iam_policy_document" "deny_region_interaction" {
 
     actions = [
       "account:EnableRegion",
-      "account:DisableRegion",
+      "account:DisableRegion"
     ]
 
     resources = [
@@ -21,10 +21,10 @@ resource "aws_organizations_policy" "deny_region_interaction" {
   name        = "Deny Region Interaction"
   description = "Deny the ability to enable or disable a region."
 
-  content = "${data.aws_iam_policy_document.deny_region_interaction.json}"
+  content = data.aws_iam_policy_document.deny_region_interaction.json
 }
 
 resource "aws_organizations_policy_attachment" "deny_region_interaction_attachment" {
-  policy_id = "${aws_organizations_policy.deny_region_interaction.id}"
-  target_id = "${var.target_id}"
+  policy_id = aws_organizations_policy.deny_region_interaction.id
+  target_id = var.target_id
 }

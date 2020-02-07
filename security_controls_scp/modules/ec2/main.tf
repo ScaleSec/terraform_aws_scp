@@ -30,10 +30,10 @@ resource "aws_organizations_policy" "require_mfa_ec2_actions" {
   name        = "Require MFA EC2 Actions"
   description = "Require MFA Stopping or Deleting EC2 Instances"
 
-  content = "${data.aws_iam_policy_document.require_mfa_ec2_actions.json}"
+  content = data.aws_iam_policy_document.require_mfa_ec2_actions.json
 }
 
 resource "aws_organizations_policy_attachment" "require_mfa_ec2_actions_attachment" {
-  policy_id = "${aws_organizations_policy.require_mfa_ec2_actions.id}"
-  target_id = "${var.target_id}"
+  policy_id = aws_organizations_policy.require_mfa_ec2_actions.id
+  target_id = var.target_id
 }

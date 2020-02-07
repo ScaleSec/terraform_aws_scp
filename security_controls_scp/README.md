@@ -9,38 +9,38 @@ The following SCPs should only be applied after the account has been configured 
 ### Account
 
 - Denies the ability to enable or disable a region.
-- By default, when new regions are enabled by AWS, you now have to enable that region before IAM will propogate. 
-- This policy can be used to lock down the ability to launch resources in unapproved regions or deny a malicious actor from disabling a region in your account. 
-- When a region is disabled, and there are IAM resources in that region, they will be removed. Please view the documentation [here](https://aws.amazon.com/blogs/security/setting-permissions-to-enable-accounts-for-upcoming-aws-regions/) for more information.
+  - By default, when new regions are enabled by AWS, you now have to enable that region before IAM will propogate. 
+  - This policy can be used to lock down the ability to launch resources in unapproved regions or deny a malicious actor from disabling a region in your account. 
+  - *Important*: When a region is disabled, and there are IAM resources in that region, they will be removed. Please view the documentation [here](https://aws.amazon.com/blogs/security/setting-permissions-to-enable-accounts-for-upcoming-aws-regions/) for more information.
 
 ### AWS Config
 
 - Denies the ability to delete AWS Config rules and stop recording. 
-- AWS Config is a service to monitor your resources for point-in-time configuration updates and compliance monitoring. 
-- Malicious actors may try to stop AWS Config recording and perform destructive behavior so it is important to deny AWS Config deletions.
+  - AWS Config is a service to monitor your resources for point-in-time configuration updates and compliance monitoring. 
+  - Malicious actors may try to stop AWS Config recording and perform destructive behavior so it is important to deny AWS Config deletions.
 
 ### CloudTrail
 
 - Denies the ability to delete CloudTrail trails. 
-- CloudTrail monitors all API calls against (supported) resources. 
-- Please note that not all AWS services and resources are supported by CloudTrail.
-- Because CloudTrail is a record of all API calls made, it is commonly targeted to cover malicious actors' tracks.
+  - CloudTrail monitors all API calls against (supported) resources. 
+  - Please note that not all AWS services and resources are supported by CloudTrail.
+  - Because CloudTrail is a record of all API calls made, it is commonly targeted to cover malicious actors' tracks.
 
 ### EC2
 
 - Requires MFA when deleting or stopping EC2 instances.
-- A best practice is to protect your resources from accidental deletions and requiring MFA is one step in that direction. 
+  - A best practice is to protect your resources from accidental deletions and requiring MFA is one step in that direction. 
 
 ### GuardDuty
 
 - Denies the ability to remove the assigned account from the GuardDuty master. 
-- Once GuardDuty is in place for an account, it should not be removed while in use. 
+  - Once GuardDuty is in place for an account, it should not be removed while in use. 
 
 ### IAM
 
 - Requires MFA to be set before any action can be performed. 
-- The user will only be able to set a MFA device and then must log out / in to have normal access.
-- This is a blanket guardrail that should be used caustiously. Keep in mine that unless the user authenticated with MFA via the CLI, access keys will not be valid. 
+  - The user will only be able to set a MFA device and then must log out / in to have normal access.
+  - This is a blanket guardrail that should be used caustiously. Keep in mine that unless the user authenticated with MFA via the CLI, access keys will not be valid. 
 
 ### AWS Organizations
 
@@ -56,9 +56,9 @@ The following SCPs should only be applied after the account has been configured 
 ### AWS Shield
 
 - Denies the ability to remove AWS Shield protection or update the emergency contact information.
-- AWS Shield is a DDoS protection service which should be turned on 24/7.
+  - AWS Shield is a DDoS protection service which should be turned on 24/7.
 
 ### VPC
 
 - Denies the ability to delete VPC Flow Logs.
-- VPC Flow Logs are your network monitoring logs and provide visibility into anomalous traffic during a security event. 
+  - VPC Flow Logs are your network monitoring logs and provide visibility into anomalous traffic during a security event. 

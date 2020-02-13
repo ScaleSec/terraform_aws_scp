@@ -36,10 +36,10 @@ resource "aws_organizations_policy" "require_mfa_all" {
   name        = "Deny all Actions w/o MFA"
   description = "If user does not have MFA, they cannot perform actions"
 
-  content = "${data.aws_iam_policy_document.require_mfa_all.json}"
+  content = data.aws_iam_policy_document.require_mfa_all.json
 }
 
 resource "aws_organizations_policy_attachment" "require_mfa_all_attachment" {
-  policy_id = "${aws_organizations_policy.require_mfa_all.id}"
-  target_id = "${var.target_id}"
+  policy_id = aws_organizations_policy.require_mfa_all.id
+  target_id = var.target_id
 }

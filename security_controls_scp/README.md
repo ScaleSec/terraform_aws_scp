@@ -53,6 +53,7 @@ The following SCPs should only be applied after the account has been configured 
     - Denies non-TLS S3 Requests
 - Requires MFA When Deleting Objects
 - Denies the creation of publicly facing [Access Points](https://aws.amazon.com/s3/features/access-points/).
+- Restricts the region(s) where S3 buckets can be created. Update the variables file [here](https://github.com/ScaleSec/terraform_aws_scp/blob/master/security_controls_scp/variables.tf).
 
 ### AWS Shield
 

@@ -54,7 +54,8 @@ module "organizations" {
 module "s3" {
   source = "./modules/s3"
 
-  target_id = var.target_id
+  target_id       = var.target_id
+  region_lockdown = var.region_lockdown
 }
 
 ## Deploy Shield AWS Org SCPs

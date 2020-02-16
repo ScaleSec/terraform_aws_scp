@@ -26,7 +26,8 @@ module "cloudtrail" {
 module "ec2" {
   source = "./modules/ec2"
 
-  target_id = var.target_id
+  target_id         = var.target_id
+  AmiCreatorAccount = var.AmiCreatorAccount
 }
 
 ## Deploy GuardDuty AWS Org SCPs

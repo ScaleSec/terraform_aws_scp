@@ -13,3 +13,8 @@ variable "region_lockdown" {
     "us-west-1"
   ]
 }
+
+variable "AmiCreatorAccount" {
+  description = "The AWS account ID that is responsible for creating and sharing EC2 AMIs."
+  type        = string
+}

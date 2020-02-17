@@ -28,6 +28,8 @@ module "ec2" {
 
   target_id         = var.target_id
   AmiCreatorAccount = var.AmiCreatorAccount
+  ami_tag_key       = var.ami_tag_key
+  ami_tag_value     = var.ami_tag_value
 }
 
 ## Deploy GuardDuty AWS Org SCPs

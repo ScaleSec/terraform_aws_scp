@@ -45,7 +45,7 @@ resource "aws_organizations_policy_attachment" "require_mfa_ec2_actions_attachme
 
 data "aws_iam_policy_document" "restrict_ec2_ami_document" {
   statement {
-    sid = "RestrictEc2Ami"
+    sid = "RestrictEC2AMI"
 
     actions = [
       "ec2:RunInstances"

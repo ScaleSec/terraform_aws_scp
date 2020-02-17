@@ -30,6 +30,11 @@ The following SCPs should only be applied after the account has been configured 
 
 - Requires MFA when deleting or stopping EC2 instances.
   - A best practice is to protect your resources from accidental deletions and requiring MFA is one step in that direction. 
+- Locks down the AMIs that can be launched to only the AMI creation account.
+  - A common practice is to configure an AWS account for centralized AMI creations that you then share to the receiving accounts. Similiar to a hub-and-spoke model.
+- Requires a resource tag key/value pair to launch EC2s.
+  - Requiring a specific resource tag key/value pair on an AMI in order to launch an EC2 instande is a form of ABAC (Attribute-Based Access Control). ABAC is a powerful access control configuration that AWS is supporting more and more with updates. For an in-depth breakdown of ABAC, visit this [tutorial](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html). Combining ABAC in the form of a resource tag and locking down AMIs to only specific owners/account IDs allows you to put different security checks in place for a layered approach.
+
 
 ### GuardDuty
 

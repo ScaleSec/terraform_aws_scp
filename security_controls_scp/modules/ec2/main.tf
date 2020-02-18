@@ -62,7 +62,7 @@ data "aws_iam_policy_document" "restrict_ec2_ami_document" {
       variable = "ec2:Owner"
 
       values = [
-        var.AmiCreatorAccount
+        var.ami_creator_account
       ]
     }
 
@@ -106,7 +106,6 @@ data "aws_iam_policy_document" "require_ami_tag_document" {
         var.ami_tag_value
       ]
     }
-
   }
 }
 

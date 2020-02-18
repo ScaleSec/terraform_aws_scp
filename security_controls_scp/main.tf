@@ -27,7 +27,7 @@ module "ec2" {
   source = "./modules/ec2"
 
   target_id         = var.target_id
-  AmiCreatorAccount = var.AmiCreatorAccount
+  ami_creator_account = var.ami_creator_account
   ami_tag_key       = var.ami_tag_key
   ami_tag_value     = var.ami_tag_value
 }

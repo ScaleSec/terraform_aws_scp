@@ -26,7 +26,10 @@ module "cloudtrail" {
 module "ec2" {
   source = "./modules/ec2"
 
-  target_id = var.target_id
+  target_id         = var.target_id
+  ami_creator_account = var.ami_creator_account
+  ami_tag_key       = var.ami_tag_key
+  ami_tag_value     = var.ami_tag_value
 }
 
 ## Deploy GuardDuty AWS Org SCPs

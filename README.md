@@ -11,7 +11,7 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 ## Considerations
 
 - Best practice is to never attach SCPs to the root of your organization. Instead, create an Organizational Unit (OU) underneath root and attach policies there.
-- SCPs do not grant permissions in IAM but instead whitelist/blacklist services or set security guardrails.
+- SCPs do not grant permissions in IAM but instead allow/deny services or set security guardrails.
 - Root user accounts are affected by SCPs.
 - You must have at least one SCP attached to each entity.
 - Maximum of 5 SCPs can be attached to the root, OU, or Account in an organization.

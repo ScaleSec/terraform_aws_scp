@@ -1,7 +1,7 @@
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 resource "aws_organizations_policy" "allow_pci_services" {
   name        = "Allow PCI Services"
-  description = "Only allow PCI services"
+  description = "Only allow PCI services as of 6/22/2020"
 
   content = <<CONTENT
 {
@@ -33,8 +33,10 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "cognito-idp:*",
     "cognito-sync:*",
     "comprehend:*",
+    "comprehendmedical:*",
     "config:*",
     "connect:*",
+    "dataexchange:*",
     "datasync:*",
     "directconnect:*",
     "dms:*",
@@ -53,6 +55,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "events:*",
     "firehose:*",
     "fms:*",
+    "forecast:*",
     "freertos:*",
     "fsx:*",
     "glacier:*",
@@ -60,16 +63,20 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "glue:*",
     "greengrass:*",
     "guardduty:*",
+    "health:*",
     "iam:*",
     "importexport:*",
     "inspector:*",
     "iot:*",
+    "iotevents:*",
     "kafka:*",
     "kinesis:*",
     "kinesisanalytics:*",
     "kinesisvideo:*",
     "kms:*",
+    "lakeformation:*",
     "lambda:*",
+    "lex:*",
     "logs:*",
     "macie:*",
     "mediaconnect:*",
@@ -86,6 +93,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "rekognition:*",
     "rds:*",
     "redshift:*",
+    "resource-groups:*",
     "robomaker:*",
     "route53:*",
     "sagemaker:*",
@@ -104,6 +112,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "states:*",
     "storagegateway:*",
     "ssm:*",
+    "textract:*",
     "transcribe:*",
     "transfer:*",
     "translate:*",

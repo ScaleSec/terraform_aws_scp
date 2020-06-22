@@ -1,7 +1,7 @@
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/hipaa-eligible-services-reference/
 resource "aws_organizations_policy" "allow_hipaa_services" {
   name        = "Allow HIPAA Services"
-  description = "Only allow HIPAA BAA compliant services as of 8/22/2019"
+  description = "Only allow HIPAA BAA compliant services as of 6/22/2020"
 
   content = <<CONTENT
 {
@@ -10,6 +10,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     {
     "Effect": "Allow",
     "Action": [
+    "a4b:*",
     "amplify:*",
     "apigateway:*",
     "appstream:*",
@@ -28,12 +29,15 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "codebuild:*",
     "codecommit:*",
     "codedeploy:*",
+    "codepipeline:*",
     "cognito-identity:*",
     "cognito-idp:*",
     "cognito-sync:*",
+    "comprehend:*",
     "comprehendmedical:*",
     "config:*",
     "connect:*",
+    "dataexchange:*",
     "datasync:*",
     "directconnect:*",
     "dms:*",
@@ -52,6 +56,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "events:*",
     "firehose:*",
     "fms:*",
+    "forecast:*",
     "freertos:*",
     "fsx:*",
     "glacier:*",
@@ -70,6 +75,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "kms:*",
     "lakeformation:*",
     "lambda:*",
+    "lex:*",
     "logs:*",
     "macie:*",
     "mediaconnect:*",
@@ -83,6 +89,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "organizations:*",
     "personalize:*",
     "polly:*",
+    "qldb:*",
     "quicksight:*",
     "rekognition:*",
     "rds:*",
@@ -93,9 +100,9 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "secretsmanager:*",
     "securityhub:*",
     "servicecatalog:*",
+    "servicediscovery:*",
     "serverlessrepo:*",
     "ses:*",
-    "sms:*",
     "shield:*",
     "sms:*",
     "sns:*",
@@ -106,6 +113,7 @@ resource "aws_organizations_policy" "allow_hipaa_services" {
     "states:*",
     "storagegateway:*",
     "ssm:*",
+    "textract:*",
     "transcribe:*",
     "transfer:*",
     "translate:*",

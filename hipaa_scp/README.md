@@ -7,20 +7,20 @@
 
 There are HIPAA BAA compliant services or programs that do not map directly to IAM permissions or the API/SDK one to one. In addition, some of the IAM permissions are not yet supported in the console but do have an API authorized via IAM permissions. The below table attempts to consolidate the inconsistencies.
 
-| Service/Program | API/CLI/SDK | Supported in Console |
+| Service/Program | IAM Permission | Supported in Console |
 |-----------------|---------|----------------------|
 | Amazon Aurora (MySQL,PostgreSQL) | `rds` | True |
-| Amazon CloudWatch SDK Metrics | `cloudwatch` | True |
 | Amazon DocumentDB (with MongoDB compatibility) | `rds` | True |
 | Amazon Elastic Block Store (EBS) | `ec2` | True |
-| Amazon Forecast | `forecast` | __False__ |
 | Amazon Virtual Private Cloud (VPC) | `ec2` | True |
 | AWS Managed Services | __N/A__ | __N/A__ |
 | AWS Snowball Edge | `snowball` | True |
 | AWS Snowmobile | `snowball` | True |
-| AWS VM Import/Export** | __N/A__ | __N/A__ |
+| AWS VM Import/Export* | __N/A__ | __N/A__ |
+| AWS Control Tower** | __N/A__ | True |
 
-** VM Import/Export does not have a specific API/SDK but instead uses a combination of `ec2` and `s3`.
+* VM Import/Export does not have a specific IAM permission but instead uses a combination of `ec2` and `s3`.
+** AWS Control Tower does not have a specific IAM permission but instead uses a combination of `ec2`, `logs` and many others
 
 ### Known Incompatabilities
 

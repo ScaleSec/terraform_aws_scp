@@ -74,7 +74,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
     "kinesisanalytics:*",
     "kinesisvideo:*",
     "kms:*",
-    "akeformation:*",
+    "lakeformation:*",
     "lambda:*",
     "lex:*",
     "logs:*",

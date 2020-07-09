@@ -47,4 +47,3 @@ jobs:
           DEFAULT_BRANCH: 'main'
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_TERRAFORM: true
-          

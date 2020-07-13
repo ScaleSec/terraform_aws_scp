@@ -8,6 +8,13 @@ module "account" {
   target_id = var.target_id
 }
 
+## Deploy AI Services Data Opt-out Org SCPs
+module "ai" {
+  source = "./modules/ai"
+
+  target_id = var.target_id
+}
+
 ## Deploy AWS Config AWS Org SCPs
 module "awsconfig" {
   source = "./modules/awsconfig"

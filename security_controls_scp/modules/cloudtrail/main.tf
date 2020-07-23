@@ -1,10 +1,13 @@
 #-----security_controls_scp/modules/cloudtrail/main.tf----#
-data "aws_iam_policy_document" "deny_cloudtrail_delete" {
+data "aws_iam_policy_document" "deny_cloudtrail_actions" {
   statement {
-    sid = "DenyCloudTrailDelete"
+    sid = "DenyCloudTrailActions"
 
     actions = [
       "cloudtrail:DeleteTrail",
+      "cloudtrail:PutEventSelectors",
+      "cloudtrail:StopLogging",
+      "cloudtrail:UpdateTrail",
     ]
 
     resources = [
@@ -15,14 +18,14 @@ data "aws_iam_policy_document" "deny_cloudtrail_delete" {
   }
 }
 
-resource "aws_organizations_policy" "deny_cloudtrail_delete" {
-  name        = "Deny CloudTrail Delete"
-  description = "Deny the ability to delete CloudTrails"
+resource "aws_organizations_policy" "deny_cloudtrail_actions" {
+  name        = "Deny CloudTrail Actions"
+  description = "Deny the ability to manipulate CloudTrail"
 
-  content = data.aws_iam_policy_document.deny_cloudtrail_delete.json
+  content = data.aws_iam_policy_document.deny_cloudtrail_actions.json
 }
 
-resource "aws_organizations_policy_attachment" "deny_cloudtrail_delete_attachment" {
-  policy_id = aws_organizations_policy.deny_cloudtrail_delete.id
+resource "aws_organizations_policy_attachment" "deny_cloudtrail_actions_attachment" {
+  policy_id = aws_organizations_policy.deny_cloudtrail_actions.id
   target_id = var.target_id
 }

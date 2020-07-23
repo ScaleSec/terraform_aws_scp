@@ -23,7 +23,7 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
 - AWS Organizations use a tree hierarchy for SCPs. This means that if your account is in an Organizational Unit, it inherits that OUs policies.
 - From the documentation:
 
-![alt text](https://docs.aws.amazon.com/organizations/latest/userguide/images/How_SCP_Permissions_Work.jpg "SCP Venn Diagram")
+![alt text](https://docs.aws.amazon.com/organizations/latest/userguide/images/How_SCP_Permissions_Work.png "SCP Venn Diagram")
 
 ## Content
 

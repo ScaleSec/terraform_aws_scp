@@ -1,9 +1,9 @@
-name: Terraform lint and apply
+name: Terraform Validation
 
-  push:
-    branches:
-    - main
+on: 
   pull_request:
+    types: [opened, edited]
+
 
 jobs:
   build:

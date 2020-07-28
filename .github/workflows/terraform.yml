@@ -1,0 +1,90 @@
+name: Terraform lint and apply
+
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Terraform Validation
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Setup Terraform
+    - uses: hashicorp/setup-terraform@v1
+
+# HIPAA Validation
+    - name: Terraform fmt
+      run: terraform fmt
+      working-directory: ./hipaa_scp
+      continue-on-error: true
+
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ./hipaa_scp
+
+    - name: Terraform Validate
+      run: terraform validate -no-color
+      working-directory: ./hipaa_scp
+
+    - name: Terraform Plan
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./hipaa_scp
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# PCI Validation
+    - name: Terraform fmt
+      run: terraform fmt
+      working-directory: ./pci_scp
+      continue-on-error: true
+
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ./pci_scp
+
+    - name: Terraform Validate
+      run: terraform validate -no-color
+      working-directory: ./pci_scp
+
+    - name: Terraform Plan
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./pci_scp
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# Security Controls Validation
+    - name: Terraform fmt
+      run: terraform fmt
+      working-directory: ./security_controls_scp
+      continue-on-error: true
+
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ./security_controls_scp
+
+    - name: Terraform Validate
+      run: terraform validate -no-color
+      working-directory: ./security_controls_scp
+
+    - name: Terraform Plan
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./security_controls_scp
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+        TF_VAR_ami_creator_account: ${{ secrets.AMI_CREATOR_ACCOUNT }}"'
+        TF_VAR_ami_tag_key: ${{ secrets.AMI_TAG_KEY }}"'
+        TF_VAR_ami_tag_value: ${{ secrets.AMI_TAG_VALUE }}"'

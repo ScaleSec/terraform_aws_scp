@@ -24,20 +24,20 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
 # HIPAA Validation
-    - name: Terraform fmt
+    - name: Terraform fmt HIPAA
       run: terraform fmt
       working-directory: ./hipaa_scp
       continue-on-error: true
 
-    - name: Terraform Init
+    - name: Terraform Init HIPAA
       run: terraform init
       working-directory: ./hipaa_scp
 
-    - name: Terraform Validate
+    - name: Terraform Validate HIPAA
       run: terraform validate -no-color
       working-directory: ./hipaa_scp
 
-    - name: Terraform Plan
+    - name: Terraform Plan HIPAA
       run: terraform plan -no-color
       continue-on-error: false
       working-directory: ./hipaa_scp
@@ -45,20 +45,20 @@ jobs:
         TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
 
 # PCI Validation
-    - name: Terraform fmt
+    - name: Terraform fmt PCI
       run: terraform fmt
       working-directory: ./pci_scp
       continue-on-error: true
 
-    - name: Terraform Init
+    - name: Terraform Init PCI
       run: terraform init
       working-directory: ./pci_scp
 
-    - name: Terraform Validate
+    - name: Terraform Validate PCI
       run: terraform validate -no-color
       working-directory: ./pci_scp
 
-    - name: Terraform Plan
+    - name: Terraform Plan PCI
       run: terraform plan -no-color
       continue-on-error: false
       working-directory: ./pci_scp
@@ -66,20 +66,20 @@ jobs:
         TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
 
 # Security Controls Validation
-    - name: Terraform fmt
+    - name: Terraform fmt Security Controls
       run: terraform fmt
       working-directory: ./security_controls_scp
       continue-on-error: true
 
-    - name: Terraform Init
+    - name: Terraform Init Security Controls
       run: terraform init
       working-directory: ./security_controls_scp
 
-    - name: Terraform Validate
+    - name: Terraform Validate Security Controls
       run: terraform validate -no-color
       working-directory: ./security_controls_scp
 
-    - name: Terraform Plan
+    - name: Terraform Plan Security Controls
       run: terraform plan -no-color
       continue-on-error: false
       working-directory: ./security_controls_scp

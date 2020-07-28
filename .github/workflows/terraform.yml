@@ -1,8 +1,7 @@
 name: Terraform Validation
 
 on: 
-  pull_request:
-    types: [opened, edited]
+  pull_request
 
 
 jobs:

@@ -34,7 +34,7 @@ The following SCPs should only be applied after the account has been configured 
   - A common practice is to configure an AWS account for centralized AMI creations that you then share to the receiving accounts. Similiar to a hub-and-spoke model.
 - Requires a resource tag key/value pair to launch EC2s.
   - Requiring a specific resource tag key/value pair on an AMI in order to launch an EC2 instande is a form of ABAC (Attribute-Based Access Control). ABAC is a powerful access control configuration that AWS is supporting more and more with updates. For an in-depth breakdown of ABAC, visit this [tutorial](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html). Combining ABAC in the form of a resource tag and locking down AMIs to only specific owners/account IDs allows you to put different security checks in place for a layered approach.
-- Denies the ability for EC2 users to deploy EC2 instances with Public AMIs
+- Denies the ability for users to deploy EC2 instances with public AMIs
   - A lot of organizations have their own internal AMIs with pre-baked security agents and other applications. If users have the ability to launch EC2s with public AMIs, they can circumvent the security tools. This SCP requires users to use private AMIs that are custom built (normally).
 
 

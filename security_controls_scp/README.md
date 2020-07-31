@@ -71,3 +71,8 @@ The following SCPs should only be applied after the account has been configured 
 
 - Denies the ability to delete VPC Flow Logs.
   - VPC Flow Logs are your network monitoring logs and provide visibility into anomalous traffic during a security event. 
+
+### RDS
+
+- Deny RDS actions that do not specify encryption flags
+  - This SCP covers all RDS actions that support encryption and denies if the user does not specify encryption for the resource.

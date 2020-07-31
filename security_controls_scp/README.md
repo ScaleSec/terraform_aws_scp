@@ -21,7 +21,7 @@ The following SCPs should only be applied after the account has been configured 
 
 ### CloudTrail
 
-- Denies the ability to delete CloudTrail trails. 
+- Denies the ability to delete or manipulate CloudTrail trails. 
   - CloudTrail monitors all API calls against (supported) resources. 
   - Please note that not all AWS services and resources are supported by CloudTrail.
   - Because CloudTrail is a record of all API calls made, it is commonly targeted to cover malicious actors' tracks.

@@ -58,13 +58,6 @@ To Deploy all of the AWS best practice SCPs (navigate to the root __security_con
 To Remove the SCPs:
 - `terraform destroy` to destroy the deployed policies.
 
-## Inputs / Variables ###
-
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| aws\_region | The AWS Region where your AWS Organization is configured. | string | `"us-east-1"` | no |
-| target\_id | The Root ID, Organizational Unit ID, or AWS Account ID to apply SCPs. | string | `"N/A"` | yes |
-
 ## Deployment Dependencies
 
 - [Terraform v12](https://www.terraform.io/downloads.html)

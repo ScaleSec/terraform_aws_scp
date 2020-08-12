@@ -76,3 +76,8 @@ The following SCPs should only be applied after the account has been configured 
 
 - Deny RDS actions that do not specify encryption flags
   - This SCP covers all RDS actions that support encryption and denies if the user does not specify encryption for the resource.
+  
+### Lambda
+
+- Requires lambda functions to be deployed in a customer-managed VPC.
+  - Use this SCP with caution as you need to have enough IPs available in your subnets. In addition, if the lambda needs to reach out to the internet, you also need to configure outbound access in your VPC.

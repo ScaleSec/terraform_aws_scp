@@ -1,4 +1,5 @@
 provider "aws" {
+  region  = "us-east-1"
 }
 
 ## Deploy Account AWS Org SCPs

@@ -3,7 +3,7 @@
 resource "aws_organizations_policy" "ai_services_opt_out" {
   name        = "Opt out of AI services customer content usage"
   description = "Deny the ability to use customer data for the development and continuous improvement of Amazon AI services and technologies."
-  type = "AI_OPT_OUT_POLICY"
+  type = "AISERVICES_OPT_OUT_POLICY"
   content = <<CONTENT
   {
     "services": {

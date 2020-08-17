@@ -1,4 +1,5 @@
-#-----security_controls_scp/modules/awsconfig/main.tf----#
+#-----security_controls_scp/modules/awsconfig/deny_interruption_actions.tf-----#
+
 data "aws_iam_policy_document" "deny_aws_config_rules_delete" {
   statement {
     sid = "DenyConfigRulesDelete"

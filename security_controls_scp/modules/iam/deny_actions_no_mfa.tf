@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/iam/main.tf----#
+#-----security_controls_scp/modules/iam/deny_actions_no_mfa.tf----#
 
 #This policy comes from "DenyAllExceptListedIfNoMFA" https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html
 data "aws_iam_policy_document" "require_mfa_all" {

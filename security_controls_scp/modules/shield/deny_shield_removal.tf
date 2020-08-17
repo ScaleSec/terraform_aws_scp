@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/shield/main.tf----#
+#-----security_controls_scp/modules/shield/deny_shield_removal.tf----#
 
 data "aws_iam_policy_document" "deny_shield_removal" {
   statement {

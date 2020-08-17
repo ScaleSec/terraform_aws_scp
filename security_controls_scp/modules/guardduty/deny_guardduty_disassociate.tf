@@ -1,4 +1,5 @@
-#-----security_controls_scp/modules/guardduty/main.tf----#
+#-----security_controls_scp/modules/guardduty/deny_guardduty_disassociate.tf----#
+
 data "aws_iam_policy_document" "deny_guardduty_disassociate" {
   statement {
     sid = "DenyGuardDutyDisassociation"

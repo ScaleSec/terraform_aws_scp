@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/lambda/main.tf----#
+#-----security_controls_scp/modules/lambda/require_vpc_lambda.tf----#
 
 ##############################################################################
 ## Requires lambda functions to be deployed in a customer owned VPC.        ##

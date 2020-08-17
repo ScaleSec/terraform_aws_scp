@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/account/main.tf----#
+#-----security_controls_scp/modules/account/deny_region_interaction.tf----#
 
 data "aws_iam_policy_document" "deny_region_interaction" {
   statement {

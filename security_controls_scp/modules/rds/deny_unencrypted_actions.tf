@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/rds/main.tf----#
+#-----security_controls_scp/modules/rds/deny_unencrypted_actions.tf----#
 
 data "aws_iam_policy_document" "deny_unencrypted_rds_actions" {
   statement {

@@ -1,4 +1,5 @@
-#-----security_controls_scp/modules/cloudtrail/main.tf----#
+#-----security_controls_scp/modules/cloudtrail/deny_cloudtrail_actions.tf----#
+
 data "aws_iam_policy_document" "deny_cloudtrail_actions" {
   statement {
     sid = "DenyCloudTrailActions"

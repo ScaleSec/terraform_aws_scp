@@ -54,9 +54,23 @@ module "iam" {
   target_id = var.target_id
 }
 
+## Deploy Lambda AWS Org SCPs
+module "lambda" {
+  source = "./modules/lambda"
+
+  target_id = var.target_id
+}
+
 ## Deploy AWS Organizations SCPs
 module "organizations" {
   source = "./modules/organizations"
+
+  target_id = var.target_id
+}
+
+## Deploy RDS AWS Org SCPs
+module "rds" {
+  source = "./modules/rds"
 
   target_id = var.target_id
 }
@@ -82,4 +96,3 @@ module "vpc" {
 
   target_id = var.target_id
 }
-

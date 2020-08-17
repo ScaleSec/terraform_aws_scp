@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/organizations/main.tf----#
+#-----security_controls_scp/modules/organizations/deny_orgs_leave.tf----#
 
 data "aws_iam_policy_document" "deny_orgs_leave" {
   statement {

@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/ai/main.tf----#
+#-----security_controls_scp/modules/ai/ai_services_opt_out.tf----#
 
 resource "aws_organizations_policy" "ai_services_opt_out" {
   name        = "Opt out of AI services customer content usage"

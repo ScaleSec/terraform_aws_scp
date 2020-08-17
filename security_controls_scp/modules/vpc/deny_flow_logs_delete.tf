@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/vpc/main.tf----#
+#-----security_controls_scp/modules/vpc/deny_flow_logs_delete.tf----#
 
 data "aws_iam_policy_document" "deny_vpc_flow_logs_delete" {
   statement {

@@ -13,6 +13,13 @@ The following SCPs should only be applied after the account has been configured 
   - This policy can be used to lock down the ability to launch resources in unapproved regions or deny a malicious actor from disabling a region in your account. 
   - *Important*: When a region is disabled, and there are IAM resources in that region, they will be removed. Please view the documentation [here](https://aws.amazon.com/blogs/security/setting-permissions-to-enable-accounts-for-upcoming-aws-regions/) for more information.
 
+### AI Services
+
+- Opts out of sharing customer content processed by Amazon CodeGuru Profiler, Amazon Comprehend, Amazon Lex, Amazon Polly, Amazon Rekognition, Amazon Textract, Amazon Transcribe, and Amazon Translate for the development and continuous improvement of Amazon AI services and technologies.
+  - This policy opts out of all services and does not allow child policies to opt in.
+  - Please review the documentation [here](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out_syntax.html) on how to selectively opt in to data sharing.
+  - Prior to applying, ensure that the AI services opt-out policy type is enabled for the organization.
+
 ### AWS Config
 
 - Denies the ability to delete AWS Config rules and stop recording. 

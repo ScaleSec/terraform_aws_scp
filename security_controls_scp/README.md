@@ -2,7 +2,7 @@
 
 ## Service Control Policies (SCPs)
 
-The following SCPs should only be applied after the account has been configured properly. The pre-configuration includes all security tools and IAM permissions. The recommended best practice is to create an on-boarding Organizational Unit that has limited permissions to deploy your tools and then move the account into an OU that has the security guardrails attached.
+The following SCPs should only be applied after the account has been configured properly. The pre-configuration includes all security tools and IAM permissions. The recommended best practice is to create an onboarding Organizational Unit (OU) that has limited permissions to deploy your tools and then move the account into an OU that has the security guardrails attached.
 
 ## Security Guardrails
 

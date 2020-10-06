@@ -43,6 +43,10 @@ The following SCPs should only be applied after the account has been configured 
   - Requiring a specific resource tag key/value pair on an AMI in order to launch an EC2 instande is a form of ABAC (Attribute-Based Access Control). ABAC is a powerful access control configuration that AWS is supporting more and more with updates. For an in-depth breakdown of ABAC, visit this [tutorial](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html). Combining ABAC in the form of a resource tag and locking down AMIs to only specific owners/account IDs allows you to put different security checks in place for a layered approach.
 - [deny_public_ami.tf](./modules/ec2/deny_public_ami.tf) - Denies the ability for users to deploy EC2 instances with public AMIs
   - A lot of organizations have their own internal AMIs with pre-baked security agents and other applications. If users have the ability to launch EC2s with public AMIs, they can circumvent the security tools. This SCP requires users to use private AMIs that are custom built (normally).
+- [require_imdsv2.tf](./modules/ec2/require_imdsv2.tf) - Requires the use of IMDSv2 for all newly launched EC2 instances.
+  - Be aware that if you use Auto Scaling groups you must use launch templates and NOT launch configurations. There are other requires noted [here.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-example-instance-metadata)
+- [imdsv2_max_hop.tf](./modules/ec2/imdsv2_max_hop.tf) - Limits the amount of hops an IMDsv2 token can make.
+  - IMDSv2 switches from a `request/response method` to a `session-oriented method` which requires a token be generated and specified to interact with the metadata service on EC2 instances. You are able to set a maximum hop limit to keep tokens only on the EC2 where they were generated. There may be times where you need a higher hop limit, but the default is set to 1.
 
 
 ### GuardDuty

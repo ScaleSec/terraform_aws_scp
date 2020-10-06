@@ -30,6 +30,6 @@ variable "ami_tag_value" {
 }
 
 variable "imdsv2_max_hop" {
-  description = "The maximum hop allowed for a IMDSv2 token."
+  description = "The maximum hop allowed for an IMDSv2 token."
   type        = number
 }

@@ -18,3 +18,9 @@ variable "ami_tag_value" {
   description = "The Resource Tag Value to lockdown AMIs for ABAC."
   type        = string
 }
+
+variable "imdsv2_max_hop" {
+  description = "The maximum hop allowed for a IMDSv2 token."
+  default = 1
+  type        = number
+}

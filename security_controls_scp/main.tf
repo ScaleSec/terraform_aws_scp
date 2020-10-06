@@ -38,6 +38,7 @@ module "ec2" {
   ami_creator_account = var.ami_creator_account
   ami_tag_key       = var.ami_tag_key
   ami_tag_value     = var.ami_tag_value
+  imdsv2_max_hop    = var.imdsv2_max_hop
 }
 
 ## Deploy GuardDuty AWS Org SCPs

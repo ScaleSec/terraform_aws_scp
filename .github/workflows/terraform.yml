@@ -87,3 +87,4 @@ jobs:
         TF_VAR_ami_creator_account: ${{ secrets.AMI_CREATOR_ACCOUNT }}"'
         TF_VAR_ami_tag_key: ${{ secrets.AMI_TAG_KEY }}"'
         TF_VAR_ami_tag_value: ${{ secrets.AMI_TAG_VALUE }}"'
+        TF_VAR_imdsv2_max_hop: ${{ secrets.IMDSV2_MAX_HOP }}"'

@@ -41,7 +41,7 @@ An example main.tf for the module to deny the ability to delete CloudTrail Trail
 
 ```hcl
 module "cloudtrail" {
-  source      = "modules/cloudtrail"
+  source      = "./modules/cloudtrail"
 
   target_id = "123456789012"
   aws_region = "us-east-1"
@@ -49,16 +49,20 @@ module "cloudtrail" {
   customprofile = "default"
 }
 ```
+### Deployment
 
-To Deploy all of the AWS best practice SCPs (navigate to the root __security_controls_scp__):
+To Deploy all of the AWS security best practice SCPs (navigate to [__security_controls_scp__](./security_controls_scp):
 - `terraform init` to get the plugins.
 - `terraform plan` to verify your resource planning.
 - `terraform apply` to apply your SCPs.
 
+You will receive an error related similar to `ConstraintViolationException: You have attached the maximum number of policies to the specified target.` when you deploy ALL of the security related SCPs. We recommend only deploying the SCPs you need by leveraging the `-target` flag in your `terraform apply` command. An example command to deploy only the S3 and Lambda SCPs is below:
+- `terraform apply -target=module.s3 -target=module.lambda`
+
 To Remove the SCPs:
 - `terraform destroy` to destroy the deployed policies.
 
-## Deployment Dependencies
+### Deployment Dependencies
 
 - [Terraform v12](https://www.terraform.io/downloads.html)
 - [terraform-provider-aws](https://github.com/terraform-providers/terraform-provider-aws)

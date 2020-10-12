@@ -51,7 +51,7 @@ module "cloudtrail" {
 ```
 ### Deployment
 
-To Deploy all of the AWS security best practice SCPs (navigate to [__security_controls_scp__](./security_controls_scp):
+To Deploy all of the AWS security best practice SCPs (navigate to [__security_controls_scp__])(./security_controls_scp):
 - `terraform init` to get the plugins.
 - `terraform plan` to verify your resource planning.
 - `terraform apply` to apply your SCPs.

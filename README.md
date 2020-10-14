@@ -1,5 +1,7 @@
 # Terraform AWS Service Control Policies
 
+[![GitHub Super-Linter](https://github.com/ScaleSec/terraform_aws_scp/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 This repo is a collection of AWS Service Control Policies (SCPs) written in Hashicorp Terraform to be used in AWS Organizations.
 
 ## About Service Control Policies

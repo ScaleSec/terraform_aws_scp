@@ -9,7 +9,7 @@ The following SCPs should only be applied after the account has been configured 
 ### Account
 
 - [deny_region_interaction.tf](./modules/account/deny_region_interaction.tf) - Denies the ability to enable or disable a region.
-  - By default, when new regions are enabled by AWS, you now have to enable that region before IAM will propogate. 
+  - By default, when new regions are enabled by AWS, you now have to enable that region before IAM will propagate. 
   - This policy can be used to lock down the ability to launch resources in unapproved regions or deny a malicious actor from disabling a region in your account. 
   - *Important*: When a region is disabled, and there are IAM resources in that region, they will be removed. Please view the documentation [here](https://aws.amazon.com/blogs/security/setting-permissions-to-enable-accounts-for-upcoming-aws-regions/) for more information.
 
@@ -38,9 +38,9 @@ The following SCPs should only be applied after the account has been configured 
 - [require_mfa_actions.tf](./modules/ec2/require_mfa_actions.tf) - Requires MFA when deleting or stopping EC2 instances.
   - A best practice is to protect your resources from accidental deletions and requiring MFA is one step in that direction. 
 - [restrict_ami_owner.tf](./modules/ec2/restrict_ami_owner.tf) - Locks down the AMIs that can be launched to only the AMI creation account.
-  - A common practice is to configure an AWS account for centralized AMI creations that you then share to the receiving accounts. Similiar to a hub-and-spoke model.
+  - A common practice is to configure an AWS account for centralized AMI creations that you then share to the receiving accounts. Similar to a hub-and-spoke model.
 - [require_ami_tag.tf](./modules/ec2/require_ami_tag.tf) - Requires a resource tag key/value pair to launch EC2s.
-  - Requiring a specific resource tag key/value pair on an AMI in order to launch an EC2 instande is a form of ABAC (Attribute-Based Access Control). ABAC is a powerful access control configuration that AWS is supporting more and more with updates. For an in-depth breakdown of ABAC, visit this [tutorial](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html). Combining ABAC in the form of a resource tag and locking down AMIs to only specific owners/account IDs allows you to put different security checks in place for a layered approach.
+  - Requiring a specific resource tag key/value pair on an AMI in order to launch an EC2 instance is a form of ABAC (Attribute-Based Access Control). ABAC is a powerful access control configuration that AWS is supporting more and more with updates. For an in-depth breakdown of ABAC, visit this [tutorial](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html). Combining ABAC in the form of a resource tag and locking down AMIs to only specific owners/account IDs allows you to put different security checks in place for a layered approach.
 - [deny_public_ami.tf](./modules/ec2/deny_public_ami.tf) - Denies the ability for users to deploy EC2 instances with public AMIs
   - A lot of organizations have their own internal AMIs with pre-baked security agents and other applications. If users have the ability to launch EC2s with public AMIs, they can circumvent the security tools. This SCP requires users to use private AMIs that are custom built (normally).
 - [require_imdsv2.tf](./modules/ec2/require_imdsv2.tf) - Requires the use of IMDSv2 for all newly launched EC2 instances.
@@ -58,7 +58,7 @@ The following SCPs should only be applied after the account has been configured 
 
 - [deny_actions_no_mfa.tf](./modules/iam/deny_actions_no_mfa.tf) - Requires MFA to be set before any action can be performed. 
   - The user will only be able to set a MFA device and then must log out / in to have normal access.
-  - This is a blanket guardrail that should be used caustiously. Keep in mine that unless the user authenticated with MFA via the CLI, access keys will not be valid. 
+  - This is a blanket guardrail that should be used cautiously. Keep in mind that unless the user authenticated with MFA via the CLI, access keys will not be valid. 
 
 ### Lambda
 

@@ -48,6 +48,10 @@ The following SCPs should only be applied after the account has been configured 
 - [imdsv2_max_hop.tf](./modules/ec2/imdsv2_max_hop.tf) - Limits the amount of hops an IMDSv2 token can make.
   - IMDSv2 switches from a `request/response method` to a `session-oriented method` which requires a token be generated and specified to interact with the metadata service on EC2 instances. You are able to set a maximum hop limit to keep tokens only on the EC2 where they were generated. There may be times where you need a higher hop limit, but the default is set to 1.
 
+### EFS
+
+- [deny_unencrypted_efs_actions.tf](./modules/efs/deny_unencrypted_efs_actions.tf) - Deny EFS actions that do not specify encryption flags
+  - This SCP covers all EFS actions that support encryption and denies if the user does not specify encryption for the resource.
 
 ### GuardDuty
 

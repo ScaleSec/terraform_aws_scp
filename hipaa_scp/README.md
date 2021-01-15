@@ -23,7 +23,6 @@ There are HIPAA BAA compliant services or programs that do not map directly to I
 | AWS Snowball Edge | `snowball` | True | True |
 | AWS Snowmobile | `snowball` | True | True |
 | AWS VM Import/Export* | __N/A__ | __N/A__ | __N/A__ |
-| AWS Control Tower* | __N/A__ | __N/A__ | __N/A__ |
 | Elastic Load Balancing | `ec2` | True | True
 
 - `*` These services do not have a specific IAM permission but instead uses a combination for the service.

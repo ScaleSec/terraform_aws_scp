@@ -386,3 +386,5 @@ MigrationBackup/
 .DS_Store
 */.DS_Store
 */*/.DS_Store
+selections.json
+terraform-provider-*

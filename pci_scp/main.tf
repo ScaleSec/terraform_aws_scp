@@ -46,6 +46,7 @@ resource "aws_organizations_policy" "allow_pci_services" {
       "dms:*",
       "ds:*",
       "dynamodb:*",
+      "ebs:*",
       "ec2:*",
       "ecr:*",
       "ecs:*",

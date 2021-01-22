@@ -94,3 +94,6 @@ The following SCPs should only be applied after the account has been configured 
   - VPC Flow Logs are your network monitoring logs and provide visibility into anomalous traffic during a security event. 
 
 
+### Region
+
+- [region_restriction.tf](./modules/region/region_restriction.tf) - Restricts the region(s) where AWS non-global services APIs can be invoked. Update the variables file [here](https://github.com/ScaleSec/terraform_aws_scp/blob/master/security_controls_scp/variables.tf)

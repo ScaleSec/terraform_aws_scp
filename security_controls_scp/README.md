@@ -96,4 +96,4 @@ The following SCPs should only be applied after the account has been configured 
 
 ### Region
 
-- [region_restriction.tf](./modules/region/region_restriction.tf) - Restricts the region(s) where AWS non-global services APIs can be invoked. Update the variables file [here](https://github.com/ScaleSec/terraform_aws_scp/blob/master/security_controls_scp/variables.tf)
+- [region_restriction.tf](./modules/region/region_restriction.tf) - Restricts the region(s) where AWS non-global services APIs can be invoked. Update the variables file [here](https://github.com/ScaleSec/terraform_aws_scp/blob/master/security_controls_scp/variables.tf). More information on this SCP can be found [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_deny-requested-region.html).

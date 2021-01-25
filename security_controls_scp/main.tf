@@ -97,3 +97,11 @@ module "vpc" {
 
   target_id = var.target_id
 }
+
+## Deploy Region Restriction AWS Org SCPs
+module "region" {
+  source = "./modules/region"
+
+  target_id       = var.target_id
+  region_lockdown = var.region_lockdown
+}

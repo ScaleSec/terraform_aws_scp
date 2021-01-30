@@ -94,6 +94,7 @@ The following SCPs should only be applied after the account has been configured 
 ### SageMaker
 
 - [require_vpc_domain.tf](./modules/sagemaker/require_vpc_domain.tf) - Requires all SageMaker domains to be configured for VPC only upon creation. The two available options are `PublicInternetOnly` and `VpcOnly`.
+- [deny_direct_internet_notebook.tf](./modules/sagemaker/deny_direct_internet_notebook.tf) - Requires all SageMaker notebooks to access to internet via a customer-owned VPC. The default configuration is to leverage the SageMaker owned VPC network.
 
 ### VPC
 

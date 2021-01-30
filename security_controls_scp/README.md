@@ -26,6 +26,15 @@ The following SCPs should only be applied after the account has been configured 
   - AWS Config is a service to monitor your resources for point-in-time configuration updates and compliance monitoring. 
   - Malicious actors may try to stop AWS Config recording and perform destructive behavior so it is important to deny AWS Config deletions.
 
+### AWS Organizations
+
+- [deny_orgs_leave.tf](./modules/organizations/deny_orgs_leave.tf) - Denies the ability to remove an account from the AWS Organization it is assigned to.
+
+### AWS Shield
+
+- [deny_shield_removal.tf](./modules/shield/deny_shield_removal.tf) - Denies the ability to remove AWS Shield protection or update the emergency contact information.
+  - AWS Shield is a DDoS protection service which should be turned on 24/7.
+
 ### CloudTrail
 
 - [deny_cloudtrail_actions.tf](./modules/cloudtrail/deny_cloudtrail_actions.tf) - Denies the ability to delete or manipulate CloudTrail trails. 
@@ -48,7 +57,6 @@ The following SCPs should only be applied after the account has been configured 
 - [imdsv2_max_hop.tf](./modules/ec2/imdsv2_max_hop.tf) - Limits the amount of hops an IMDSv2 token can make.
   - IMDSv2 switches from a `request/response method` to a `session-oriented method` which requires a token be generated and specified to interact with the metadata service on EC2 instances. You are able to set a maximum hop limit to keep tokens only on the EC2 where they were generated. There may be times where you need a higher hop limit, but the default is set to 1.
 
-
 ### GuardDuty
 
 - [deny_guardduty_disassociate.tf](./modules/guardduty/deny_guardduty_disassociate.tf) - Denies the ability to remove the assigned account from the GuardDuty master. 
@@ -65,14 +73,14 @@ The following SCPs should only be applied after the account has been configured 
 - [require_vpc_lambda.tf](./modules/lambda/require_vpc_lambda.tf) - Requires lambda functions to be deployed in a customer-managed VPC.
   - Use this SCP with caution as you need to have enough IPs available in your subnets. In addition, if the lambda needs to reach out to the internet, you also need to configure outbound access in your VPC.
 
-### AWS Organizations
-
-- [deny_orgs_leave.tf](./modules/organizations/deny_orgs_leave.tf) - Denies the ability to remove an account from the AWS Organization it is assigned to.
-
 ### RDS
 
 - [deny_unencrypted_actions.tf](./modules/rds/deny_unencrypted_actions.tf) - Deny RDS actions that do not specify encryption flags
   - This SCP covers all RDS actions that support encryption and denies if the user does not specify encryption for the resource.
+
+### Region
+
+- [region_restriction.tf](./modules/region/region_restriction.tf) - Restricts the region(s) where AWS non-global services APIs can be invoked. Update the variables file [here](https://github.com/ScaleSec/terraform_aws_scp/blob/master/security_controls_scp/variables.tf). More information on this SCP can be found [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_deny-requested-region.html).
 
 ### S3
 
@@ -83,17 +91,11 @@ The following SCPs should only be applied after the account has been configured 
 - [deny_public_access_points.tf](./modules/s3/deny_public_access_points.tf) - Denies the creation of publicly facing [Access Points](https://aws.amazon.com/s3/features/access-points/).
 - [s3_region_lockdown.tf](./modules/s3/s3_region_lockdown.tf) - Restricts the region(s) where S3 buckets can be created. Update the variables file [here](https://github.com/ScaleSec/terraform_aws_scp/blob/master/security_controls_scp/variables.tf).
 
-### AWS Shield
+### SageMaker
 
-- [deny_shield_removal.tf](./modules/shield/deny_shield_removal.tf) - Denies the ability to remove AWS Shield protection or update the emergency contact information.
-  - AWS Shield is a DDoS protection service which should be turned on 24/7.
+- [require_vpc_domain.tf](./modules/sagemaker/require_vpc_domain.tf) - Requires all SageMaker domains to be configured for VPC only upon creation. The two available options are `PublicInternetOnly` and `VpcOnly`.
 
 ### VPC
 
 - [deny_flow_logs_delete.tf](./modules/vpc/deny_flow_logs_delete.tf) - Denies the ability to delete VPC Flow Logs.
   - VPC Flow Logs are your network monitoring logs and provide visibility into anomalous traffic during a security event. 
-
-
-### Region
-
-- [region_restriction.tf](./modules/region/region_restriction.tf) - Restricts the region(s) where AWS non-global services APIs can be invoked. Update the variables file [here](https://github.com/ScaleSec/terraform_aws_scp/blob/master/security_controls_scp/variables.tf). More information on this SCP can be found [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_deny-requested-region.html).

@@ -95,6 +95,7 @@ The following SCPs should only be applied after the account has been configured 
 
 - [require_vpc_domain.tf](./modules/sagemaker/require_vpc_domain.tf) - Requires all SageMaker domains to be configured for VPC only upon creation. The two available options are `PublicInternetOnly` and `VpcOnly`.
 - [deny_direct_internet_notebook.tf](./modules/sagemaker/deny_direct_internet_notebook.tf) - Requires all SageMaker notebooks to access to internet via a customer-owned VPC. The default configuration is to leverage the SageMaker owned VPC network.
+- [require_inter_encryption.tf](./modules/sagemaker/require_inter_encryption.tf) - Requires all communication between containers to be encrypted. This SCP may not be recommended for all job types. Per the [docs](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_NetworkConfig.html#sagemaker-Type-NetworkConfig-EnableInterContainerTrafficEncryption) - "Encryption provides greater security for distributed processing jobs, but the processing might take longer."
 
 ### VPC
 

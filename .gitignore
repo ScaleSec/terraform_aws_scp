@@ -29,9 +29,9 @@
 /nbdist/
 /.nb-gradle/
 /build/
-.terraform/*
-*/.terraform/*
-*/*/.terraform/*
+.terraform*
+*/.terraform*
+*/*/.terraform*
 terraform.tfstate
 terraform.tfstate.lock
 

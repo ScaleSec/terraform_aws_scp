@@ -34,8 +34,8 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
     - Select the `aws_iam_policy_document` you want and combine into one large data document.
     - Pick and choose 5 modules to deploy and remove the others.
     - Remove `aws_organizations_policy_attachment` from the modules' `main.tf` file and apply. You would then need to manually attach the SCPs.
-- The [hipaa_scp](hipaa_scp/) folder is a service control policy that whitelists HIPAA compliant AWS services based off of https://aws.amazon.com/compliance/hipaa-eligible-services-reference/.
-- The [pci_scp](pci_scp/) folder is a service control policy that whitelists PCI compliant AWS services based off of https://aws.amazon.com/compliance/services-in-scope/.
+- The [hipaa_scp](compliance_scp/hipaa_scp/) folder is a service control policy that whitelists HIPAA compliant AWS services based off of https://aws.amazon.com/compliance/hipaa-eligible-services-reference/.
+- The [pci_scp](compliance_scp/pci_scp/) folder is a service control policy that whitelists PCI compliant AWS services based off of https://aws.amazon.com/compliance/services-in-scope/.
 
 ## Usage
 

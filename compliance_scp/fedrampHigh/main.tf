@@ -6,7 +6,7 @@ data "template_file" "fedramph_policy" {
 
 resource "aws_organizations_policy" "allow_fedramph_services_policy" {
   name        = "Allow FedRAMP High Services"
-  description = "Only allow FedRAMP High services as of 02/2021"
+  description = "Only allow FedRAMP High services as of 03/2021"
 
   content = data.template_file.fedramph_policy.rendered
 }

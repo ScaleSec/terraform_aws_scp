@@ -6,7 +6,7 @@ data "template_file" "hipaa_policy" {
 
 resource "aws_organizations_policy" "allow_hipaa_services_policy" {
   name        = "Allow HIPAA Services"
-  description = "Only allow HIPAA services as of 02/2021"
+  description = "Only allow HIPAA services as of 03/2021"
 
   content = data.template_file.hipaa_policy.rendered
 }

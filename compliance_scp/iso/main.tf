@@ -6,7 +6,7 @@ data "template_file" "iso_policy" {
 
 resource "aws_organizations_policy" "allow_iso_services_policy" {
   name        = "Allow ISO Services"
-  description = "Only allow ISO services as of 02/2021"
+  description = "Only allow ISO services as of 03/2021"
 
   content = data.template_file.iso_policy.rendered
 }

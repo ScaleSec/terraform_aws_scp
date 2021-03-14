@@ -1,10 +1,9 @@
 {
     "Version": "2012-10-17",
-    "Statement": {
-        "Sid": "FedRAMPHighAllowList",
-        "Effect": "Deny",
-        "NotAction": [
-        ],
-        "Resource": "*"
-    }
+        "Statement": {
+            "Sid": "AllowList",
+            "Effect": "Deny",
+            "Resource": "*",
+            "NotAction": ["account:*", "acm:*", "apigateway:*", "application-autoscaling:*", "appstream:*", "athena:*", "autoscaling:*", "autoscaling-plans:*", "aws-portal:*", "batch:*", "clouddirectory:*", "cloudformation:*", "cloudhsm:*", "cloudtrail:*", "cloudwatch:*", "codebuild:*", "codecommit:*", "codedeploy:*", "comprehend:*", "config:*", "datasync:*", "directconnect:*", "dms:*", "ds:*", "dynamodb:*", "ebs:*", "ec2:*", "ec2messages:*", "ecr:*", "ecs:*", "elasticache:*", "elasticbeanstalk:*", "elasticfilesystem:*", "elasticloadbalancing:*", "elasticmapreduce:*", "es:*", "events:*", "execute-api:*", "firehose:*", "glacier:*", "glue:*", "greengrass:*", "guardduty:*", "iam:*", "importexport:*", "inspector:*", "iot:*", "iot-device-tester:*", "iotdeviceadvisor:*", "iotwireless:*", "kinesis:*", "kms:*", "lakeformation:*", "lambda:*", "license-manager:*", "logs:*", "mediaconvert:*", "organizations:*", "polly:*", "rds:*", "rds-data:*", "rds-db:*", "redshift:*", "rekognition:*", "route53:*", "route53domains:*", "s3:*", "sagemaker:*", "secretsmanager:*", "serverlessrepo:*", "servicecatalog:*", "sms:*", "snowball:*", "sns:*", "sqs:*", "ssm:*", "ssmmessages:*", "states:*", "storagegateway:*", "sts:*", "support:*", "swf:*", "transcribe:*", "translate:*", "trustedadvisor:*", "waf:*", "waf-regional:*", "wafv2:*", "workspaces:*"]
+        }
 }

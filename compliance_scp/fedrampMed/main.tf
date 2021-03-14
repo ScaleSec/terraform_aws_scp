@@ -6,7 +6,7 @@ data "template_file" "fedrampm_policy" {
 
 resource "aws_organizations_policy" "allow_fedrampm_services_policy" {
   name        = "Allow FedRAMP Med Services"
-  description = "Only allow FedRAMP Medium services as of 02/2021"
+  description = "Only allow FedRAMP Medium services as of 03/2021"
 
   content = data.template_file.fedrampm_policy.rendered
 }

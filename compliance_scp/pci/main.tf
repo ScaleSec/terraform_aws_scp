@@ -6,7 +6,7 @@ data "template_file" "pci_policy" {
 
 resource "aws_organizations_policy" "allow_pci_services_policy" {
   name        = "Allow PCI Services"
-  description = "Only allow PCI services as of 02/2021"
+  description = "Only allow PCI services as of 03/2021"
 
   content = data.template_file.pci_policy.rendered
 }

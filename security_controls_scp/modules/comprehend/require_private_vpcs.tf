@@ -1,7 +1,7 @@
 #-----security_controls_scp/modules/sagemaker/require_private_vpc.tf----#
 
 data "template_file" "comprehend_require_private_vpc_policy" {
-  template = file("./templates/require_private_vpcs.json")
+  template = file("${path.module}/templates/require_private_vpcs.json")
 }
 
 resource "aws_organizations_policy" "comprehend_require_private_vpc_policy" {

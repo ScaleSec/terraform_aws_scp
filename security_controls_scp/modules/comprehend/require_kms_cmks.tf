@@ -1,7 +1,7 @@
 #-----security_controls_scp/modules/sagemaker/require_kms_cmks.tf----#
 
 data "template_file" "require_kms_cmks_policy" {
-  template = file("./templates/require_kms_cmks.json")
+  template = file("${path.module}/templates/require_kms_cmks.json")
 }
 
 resource "aws_organizations_policy" "require_kms_cmks_policy" {

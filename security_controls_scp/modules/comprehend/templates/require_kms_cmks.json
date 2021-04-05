@@ -1,0 +1,61 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VolumeAndModelKmsKey",
+            "Effect": "Allow",
+            "Action": "comprehend:CreateEntityRecognizer",
+            "Resource": "*",
+            "Condition": {
+                "Null": {
+                    "comprehend:VolumeKmsKey": "true",
+                    "comprehend:ModelKmsKey": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VolModOutKmsKey",
+            "Effect": "Allow",
+            "Action": "comprehend:CreateDocumentClassifier",
+            "Resource": "*",
+            "Condition": {
+                "Null": {
+                    "comprehend:VolumeKmsKey": "true",
+                    "comprehend:ModelKmsKey": "true",
+                    "comprehend:OutputKmsKey": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VolumeAndOutputKmsKey",
+            "Effect": "Allow",
+            "Action": [
+                "comprehend:StartSentimentDetectionJob",
+                "comprehend:StartKeyPhrasesDetectionJob",
+                "comprehend:StartTopicsDetectionJob",
+                "comprehend:StartDominantLanguageDetectionJob"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "Null": {
+                    "comprehend:VolumeKmsKey": "true",
+                    "comprehend:OutputKmsKey": "true"
+                }
+            }
+        },
+        {
+            "Sid": "OutputKmsKey",
+            "Effect": "Allow",
+            "Action": [
+                "comprehend:StartEventsDetectionJob",
+                "comprehend:StartPiiEntitiesDetectionJob"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "Null": {
+                    "comprehend:OutputKmsKey": "true"
+                }
+            }
+        }
+    ]
+}

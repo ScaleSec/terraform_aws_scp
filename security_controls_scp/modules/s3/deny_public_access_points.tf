@@ -1,4 +1,4 @@
-#-----security_controls_scp/modules/s3/deny_public_access_poins.tf----#
+#-----security_controls_scp/modules/s3/deny_public_access_points.tf----#
 
 data "aws_iam_policy_document" "deny_public_access_points_document" {
   statement {

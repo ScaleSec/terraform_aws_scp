@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RequireVpcs",
+            "Effect": "Allow",
+            "Action": [
+                "comprehend:StartEntitiesDetectionJob",
+                "comprehend:CreateDocumentClassifier",
+                "comprehend:StartDocumentClassificationJob",
+                "comprehend:StartSentimentDetectionJob",
+                "comprehend:StartKeyPhrasesDetectionJob",
+                "comprehend:StartTopicsDetectionJob",
+                "comprehend:StartDominantLanguageDetectionJob",
+                "comprehend:CreateEntityRecognizer"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "Null": {
+                    "comprehend:VpcSubnets": "true",
+                    "comprehend:VpcSecurityGroupIds": "true"
+                }
+            }
+        }
+    ]
+}

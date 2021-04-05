@@ -2,23 +2,50 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "RequireVpcs",
-            "Effect": "Allow",
+            "Sid": "VpcSubnets",
+            "Effect": "Deny",
             "Action": [
-                "comprehend:StartEntitiesDetectionJob",
                 "comprehend:CreateDocumentClassifier",
+                "comprehend:CreateEntityRecognizer",
                 "comprehend:StartDocumentClassificationJob",
-                "comprehend:StartSentimentDetectionJob",
-                "comprehend:StartKeyPhrasesDetectionJob",
-                "comprehend:StartTopicsDetectionJob",
                 "comprehend:StartDominantLanguageDetectionJob",
-                "comprehend:CreateEntityRecognizer"
+                "comprehend:StartEntitiesDetectionJob",
+                "comprehend:StartKeyPhrasesDetectionJob",
+                "comprehend:StartSentimentDetectionJob",
+                "comprehend:StartTopicsDetectionJob"
             ],
-            "Resource": "*",
+            "Resource": [
+                "*"
+            ],
             "Condition": {
                 "Null": {
-                    "comprehend:VpcSubnets": "true",
-                    "comprehend:VpcSecurityGroupIds": "true"
+                    "comprehend:VpcSubnets": [
+                        "true"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "VpcSecurityGroupIds",
+            "Effect": "Deny",
+            "Action": [
+                "comprehend:CreateDocumentClassifier",
+                "comprehend:CreateEntityRecognizer",
+                "comprehend:StartDocumentClassificationJob",
+                "comprehend:StartDominantLanguageDetectionJob",
+                "comprehend:StartEntitiesDetectionJob",
+                "comprehend:StartKeyPhrasesDetectionJob",
+                "comprehend:StartSentimentDetectionJob",
+                "comprehend:StartTopicsDetectionJob"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "Null": {
+                    "comprehend:VpcSecurityGroupIds": [
+                        "true"
+                    ]
                 }
             }
         }

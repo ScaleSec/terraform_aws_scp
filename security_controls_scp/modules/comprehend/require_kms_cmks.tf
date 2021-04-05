@@ -8,7 +8,7 @@ resource "aws_organizations_policy" "require_kms_cmks_policy" {
     name        = "Comprehend require KMS CMKs"
     description = "Requires all applicable Comprehend APIs use KMS CMKs."
 
-    content = data.template_file.require_kms_cmks.rendered
+    content = data.template_file.require_kms_cmks_policy.rendered
 }
 
 resource "aws_organizations_policy_attachment" "require_kms_cmks_attachment" {

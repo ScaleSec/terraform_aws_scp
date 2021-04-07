@@ -1,7 +1,7 @@
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 
 data "template_file" "dodccsrgil2ew_policy" {
-  template = file("../templates/dodCcSrgIl2Ew.json")
+  template = file("../templates/dodccsrgIl2Ew.json")
 }
 
 resource "aws_organizations_policy" "allow_dodccsrgil2ew_services_policy" {

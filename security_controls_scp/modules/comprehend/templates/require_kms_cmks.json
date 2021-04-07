@@ -1,0 +1,72 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VolumeKmsKey",
+            "Effect": "Deny",
+            "Action": [
+                "comprehend:CreateDocumentClassifier",
+                "comprehend:CreateEntityRecognizer",
+                "comprehend:StartDominantLanguageDetectionJob",
+                "comprehend:StartKeyPhrasesDetectionJob",
+                "comprehend:StartSentimentDetectionJob",
+                "comprehend:StartTopicsDetectionJob",
+                "comprehend:StartDocumentClassificationJob",
+                "comprehend:StartEntitiesDetectionJob"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "Null": {
+                    "comprehend:VolumeKmsKey": [
+                        "true"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "ModelKmsKey",
+            "Effect": "Deny",
+            "Action": [
+                "comprehend:CreateDocumentClassifier",
+                "comprehend:CreateEntityRecognizer"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "Null": {
+                    "comprehend:ModelKmsKey": [
+                        "true"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "OutputKmsKey",
+            "Effect": "Deny",
+            "Action": [
+                "comprehend:CreateDocumentClassifier",
+                "comprehend:StartDocumentClassificationJob",
+                "comprehend:StartDominantLanguageDetectionJob",
+                "comprehend:StartEntitiesDetectionJob",
+                "comprehend:StartEventsDetectionJob",
+                "comprehend:StartKeyPhrasesDetectionJob",
+                "comprehend:StartPiiEntitiesDetectionJob",
+                "comprehend:StartSentimentDetectionJob",
+                "comprehend:StartTopicsDetectionJob"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "Null": {
+                    "comprehend:OutputKmsKey": [
+                        "true"
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -30,6 +30,13 @@ module "cloudtrail" {
   target_id = var.target_id
 }
 
+## Deploy Amazon Comprehend AWS Org SCPs
+module "comprehend" {
+  source = "./modules/comprehend"
+
+  target_id = var.target_id
+}
+
 ## Deploy EC2 AWS Org SCPs
 module "ec2" {
   source = "./modules/ec2"
@@ -82,6 +89,13 @@ module "s3" {
 
   target_id       = var.target_id
   region_lockdown = var.region_lockdown
+}
+
+## Deploy SageMaker AWS Org SCPs
+module "sagemaker" {
+  source = "./modules/sagemaker"
+
+  target_id       = var.target_id
 }
 
 ## Deploy Shield AWS Org SCPs

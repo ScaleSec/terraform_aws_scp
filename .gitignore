@@ -29,9 +29,9 @@
 /nbdist/
 /.nb-gradle/
 /build/
-.terraform/*
-*/.terraform/*
-*/*/.terraform/*
+.terraform*
+*/.terraform*
+*/*/.terraform*
 terraform.tfstate
 terraform.tfstate.lock
 
@@ -386,3 +386,5 @@ MigrationBackup/
 .DS_Store
 */.DS_Store
 */*/.DS_Store
+selections.json
+terraform-provider-*

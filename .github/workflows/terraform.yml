@@ -25,42 +25,210 @@ jobs:
 # HIPAA Validation
     - name: Terraform fmt HIPAA
       run: terraform fmt
-      working-directory: ./hipaa_scp
+      working-directory: ./compliance_scp/hipaa
       continue-on-error: true
 
     - name: Terraform Init HIPAA
       run: terraform init
-      working-directory: ./hipaa_scp
+      working-directory: ./compliance_scp/hipaa
 
     - name: Terraform Validate HIPAA
       run: terraform validate -no-color
-      working-directory: ./hipaa_scp
+      working-directory: ./compliance_scp/hipaa
 
     - name: Terraform Plan HIPAA
       run: terraform plan -no-color
       continue-on-error: false
-      working-directory: ./hipaa_scp
+      working-directory: ./compliance_scp/hipaa
       env:
         TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
 
 # PCI Validation
     - name: Terraform fmt PCI
       run: terraform fmt
-      working-directory: ./pci_scp
+      working-directory: ./compliance_scp/pci
       continue-on-error: true
 
     - name: Terraform Init PCI
       run: terraform init
-      working-directory: ./pci_scp
+      working-directory: ./compliance_scp/pci
 
     - name: Terraform Validate PCI
       run: terraform validate -no-color
-      working-directory: ./pci_scp
+      working-directory: ./compliance_scp/pci
 
     - name: Terraform Plan PCI
       run: terraform plan -no-color
       continue-on-error: false
-      working-directory: ./pci_scp
+      working-directory: ./compliance_scp/pci
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# SOC Validation
+    - name: Terraform fmt SOC
+      run: terraform fmt
+      working-directory: ./compliance_scp/soc
+      continue-on-error: true
+
+    - name: Terraform Init SOC
+      run: terraform init
+      working-directory: ./compliance_scp/soc
+
+    - name: Terraform Validate SOC
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/soc
+
+    - name: Terraform Plan SOC
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/soc
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# ISO Validation
+    - name: Terraform fmt ISO
+      run: terraform fmt
+      working-directory: ./compliance_scp/iso
+      continue-on-error: true
+
+    - name: Terraform Init ISO
+      run: terraform init
+      working-directory: ./compliance_scp/iso
+
+    - name: Terraform Validate ISO
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/iso
+
+    - name: Terraform Plan ISO
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/iso
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# FedRAMP Medium Validation
+    - name: Terraform fmt FedRAMP Med
+      run: terraform fmt
+      working-directory: ./compliance_scp/fedrampMed
+      continue-on-error: true
+
+    - name: Terraform Init FedRAMP Med
+      run: terraform init
+      working-directory: ./compliance_scp/fedrampMed
+
+    - name: Terraform Validate FedRAMP Med
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/fedrampMed
+
+    - name: Terraform Plan FedRAMP Med
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/fedrampMed
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# FedRAMP High Validation
+    - name: Terraform fmt FedRAMP High
+      run: terraform fmt
+      working-directory: ./compliance_scp/fedrampHigh
+      continue-on-error: true
+
+    - name: Terraform Init FedRAMP High
+      run: terraform init
+      working-directory: ./compliance_scp/fedrampHigh
+
+    - name: Terraform Validate FedRAMP High
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/fedrampHigh
+
+    - name: Terraform Plan FedRAMP High
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/fedrampHigh
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# DoD CC SRG IL2 (East/West) Validation
+    - name: Terraform fmt DoD CC SRG IL2 (East/West)
+      run: terraform fmt
+      working-directory: ./compliance_scp/dodCcSrgIl2Ew
+      continue-on-error: true
+
+    - name: Terraform Init DoD CC SRG IL2 (East/West)
+      run: terraform init
+      working-directory: ./compliance_scp/dodCcSrgIl2Ew
+
+    - name: Terraform Validate DoD CC SRG IL2 (East/West)
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/dodCcSrgIl2Ew
+
+    - name: Terraform Plan DoD CC SRG IL2 (East/West)h
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/dodCcSrgIl2Ew
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# DoD CC SRG IL2 (GovCloud) Validation
+    - name: Terraform fmt DoD CC SRG IL2 (GovCloud)
+      run: terraform fmt
+      working-directory: ./compliance_scp/dodCcSrgIl2Gc
+      continue-on-error: true
+
+    - name: Terraform Init DoD CC SRG IL2 (GovCloud)
+      run: terraform init
+      working-directory: ./compliance_scp/dodCcSrgIl2Gc
+
+    - name: Terraform Validate DoD CC SRG IL2 (GovCloud)
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/dodCcSrgIl2Gc
+
+    - name: Terraform Plan DoD CC SRG IL2 (GovCloud)
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/dodCcSrgIl2Gc
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# DoD CC SRG IL4 (GovCloud) Validation
+    - name: Terraform fmt DoD CC SRG IL4 (GovCloud)
+      run: terraform fmt
+      working-directory: ./compliance_scp/dodCcSrgIl4Gc
+      continue-on-error: true
+
+    - name: Terraform Init DoD CC SRG IL4 (GovCloud)
+      run: terraform init
+      working-directory: ./compliance_scp/dodCcSrgIl4Gc
+
+    - name: Terraform Validate DoD CC SRG IL4 (GovCloud)
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/dodCcSrgIl4Gc
+
+    - name: Terraform Plan DoD CC SRG IL4 (GovCloud)
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/dodCcSrgIl4Gc
+      env:
+        TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
+
+# DoD CC SRG IL5 (GovCloud) Validation
+    - name: Terraform fmt DoD CC SRG IL5 (GovCloud)
+      run: terraform fmt
+      working-directory: ./compliance_scp/dodCcSrgIl5Gc
+      continue-on-error: true
+
+    - name: Terraform Init DoD CC SRG IL5 (GovCloud)
+      run: terraform init
+      working-directory: ./compliance_scp/dodCcSrgIl5Gc
+
+    - name: Terraform Validate DoD CC SRG IL5 (GovCloud)
+      run: terraform validate -no-color
+      working-directory: ./compliance_scp/dodCcSrgIl5Gc
+
+    - name: Terraform Plan DoD CC SRG IL5 (GovCloud)
+      run: terraform plan -no-color
+      continue-on-error: false
+      working-directory: ./compliance_scp/dodCcSrgIl5Gc
       env:
         TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
 

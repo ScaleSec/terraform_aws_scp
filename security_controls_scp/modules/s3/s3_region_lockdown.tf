@@ -15,14 +15,14 @@ data "aws_iam_policy_document" "s3_region_lockdown_document" {
     effect = "Deny"
 
     condition {
-    
+
       test     = "StringNotLike"
       variable = "s3locationconstraint"
-      values = var.region_lockdown
+      values   = var.region_lockdown
     }
     condition {
 
-      test    = "Null"
+      test     = "Null"
       variable = "s3locationconstraint"
       values = [
         "false",

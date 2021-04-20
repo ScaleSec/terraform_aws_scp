@@ -48,6 +48,13 @@ module "ec2" {
   imdsv2_max_hop    = var.imdsv2_max_hop
 }
 
+## Deploy EFS AWS Org SCPs
+module "efs" {
+  source = "./modules/efs"
+
+  target_id = var.target_id
+}
+
 ## Deploy GuardDuty AWS Org SCPs
 module "guardduty" {
   source = "./modules/guardduty"

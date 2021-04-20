@@ -63,6 +63,11 @@ The following SCPs should only be applied after the account has been configured 
 - [imdsv2_max_hop.tf](./modules/ec2/imdsv2_max_hop.tf) - Limits the amount of hops an IMDSv2 token can make.
   - IMDSv2 switches from a `request/response method` to a `session-oriented method` which requires a token be generated and specified to interact with the metadata service on EC2 instances. You are able to set a maximum hop limit to keep tokens only on the EC2 where they were generated. There may be times where you need a higher hop limit, but the default is set to 1.
 
+### EFS
+
+- [deny_unencrypted_efs_actions.tf](./modules/efs/deny_unencrypted_efs_actions.tf) - Requires encryption at rest for EFS resources.
+  - This SCP will deny the creation of an Elastic File System when encryption at rest has not been enabled.
+
 ### GuardDuty
 
 - [deny_guardduty_disassociate.tf](./modules/guardduty/deny_guardduty_disassociate.tf) - Denies the ability to remove the assigned account from the GuardDuty master.

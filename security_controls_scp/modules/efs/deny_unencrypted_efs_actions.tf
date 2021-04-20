@@ -12,14 +12,14 @@ data "aws_iam_policy_document" "deny_unencrypted_efs_actions" {
       "*",
     ]
 
-    effect = "Allow"
+    effect = "Deny"
 
     condition {
       test     = "Bool"
       variable = "elasticfilesystem:Encrypted"
 
       values = [
-        "true",
+        "false",
       ]
     }
   }

@@ -50,8 +50,8 @@ The following SCPs should only be applied after the account has been configured 
 
 ### EFS
 
-- [deny_unencrypted_efs_actions.tf](./modules/efs/deny_unencrypted_efs_actions.tf) - Deny EFS actions that do not specify encryption flags
-  - This SCP covers all EFS actions that support encryption and denies if the user does not specify encryption for the resource.
+- [deny_unencrypted_efs_actions.tf](./modules/efs/deny_unencrypted_efs_actions.tf) - Requires encryption at rest for EFS resources.
+  - This SCP will deny the creation of an Elastic File System when encryption at rest has not been enabled.
 
 ### GuardDuty
 

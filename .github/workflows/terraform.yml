@@ -1,6 +1,6 @@
 name: Terraform Validation
 
-on: 
+on:
   pull_request
 
 
@@ -107,23 +107,23 @@ jobs:
         TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
 
 # FedRAMP Medium Validation
-    - name: Terraform fmt FedRAMP Med
+    - name: Terraform fmt FedRAMP Mod
       run: terraform fmt
-      working-directory: ./compliance_scp/fedrampMed
+      working-directory: ./compliance_scp/fedrampMod
       continue-on-error: true
 
-    - name: Terraform Init FedRAMP Med
+    - name: Terraform Init FedRAMP Mod
       run: terraform init
-      working-directory: ./compliance_scp/fedrampMed
+      working-directory: ./compliance_scp/fedrampMod
 
-    - name: Terraform Validate FedRAMP Med
+    - name: Terraform Validate FedRAMP Mod
       run: terraform validate -no-color
-      working-directory: ./compliance_scp/fedrampMed
+      working-directory: ./compliance_scp/fedrampMod
 
-    - name: Terraform Plan FedRAMP Med
+    - name: Terraform Plan FedRAMP Mod
       run: terraform plan -no-color
       continue-on-error: false
-      working-directory: ./compliance_scp/fedrampMed
+      working-directory: ./compliance_scp/fedrampMod
       env:
         TF_VAR_target_id: ${{ secrets.TARGET_ID }}"'
 

@@ -34,8 +34,8 @@ This repo is a collection of AWS Service Control Policies (SCPs) written in Hash
     - Select the `aws_iam_policy_document` you want and combine into one large data document.
     - Pick and choose 5 modules to deploy and remove the others.
     - Remove `aws_organizations_policy_attachment` from the modules' `main.tf` file and apply. You would then need to manually attach the SCPs.
-- The [hipaa_scp](compliance_scp/hipaa_scp/) folder is a service control policy that whitelists HIPAA compliant AWS services based off of https://aws.amazon.com/compliance/hipaa-eligible-services-reference/.
-- The [pci_scp](compliance_scp/pci_scp/) folder is a service control policy that whitelists PCI compliant AWS services based off of https://aws.amazon.com/compliance/services-in-scope/.
+- The [compliance_scp](compliance_scp/) folder is a collection of compliance-flavored SCPs. These SCPs only allow AWS services that are compliant with the respective compliance framework. All SCP JSON files are sourced from Salesforce's [aws-allowlister](https://github.com/salesforce/aws-allowlister) repository which updates via a weekly cronjob.
+
 
 ## Usage
 
@@ -71,16 +71,16 @@ To Remove the SCPs:
 - An AWS Organization
 - An IAM user with Organization Admin Access
 
-## Common Errors 
+## Common Errors
 
 #### Enabled Policy Types
 
 ```
-error creating Organizations Policy Attachment: PolicyTypeNotEnabledException: This operation can be performed only for enabled policy types.  
+error creating Organizations Policy Attachment: PolicyTypeNotEnabledException: This operation can be performed only for enabled policy types.
 status code: 400, request id: 2b8ecgeb-34h3-11e6-86fb-275c76986dec
 ```
 
-SCP functionality must be enabled on the root.  See https://github.com/terraform-providers/terraform-provider-aws/issues/4545 for more information 
+SCP functionality must be enabled on the root.  See https://github.com/terraform-providers/terraform-provider-aws/issues/4545 for more information
 
 #### Minimum SCP Requirement
 
@@ -101,5 +101,5 @@ Occasionally, if you try to assign many SCPs to one target at the same time, it 
 
 ## Limitation of Liability
 
-Please view the [License](LICENSE) for limitations of liability. 
+Please view the [License](LICENSE) for limitations of liability.
 

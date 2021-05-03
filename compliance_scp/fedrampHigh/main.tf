@@ -10,7 +10,7 @@ data "http" "fedramph_policy" {
 
 resource "aws_organizations_policy" "allow_fedramph_services_policy" {
   name        = "Allow FedRAMP High Services"
-  description = "Only allow FedRAMP High services as of 03/2021"
+  description = "Only allow FedRAMP High services"
 
   content = data.http.fedramph_policy.body
 }

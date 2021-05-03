@@ -1,14 +1,18 @@
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 
-data "template_file" "fedrampm_policy" {
-  template = file("../templates/fedrampm.json")
+data "http" "fedrampm_policy" {
+  url = "https://raw.githubusercontent.com/salesforce/aws-allowlister/main/examples/latest/FedRAMP_Moderate-AllowList-SCP.json"
+
+  request_headers = {
+    Accept = "application/json"
+  }
 }
 
 resource "aws_organizations_policy" "allow_fedrampm_services_policy" {
-  name        = "Allow FedRAMP Med Services"
-  description = "Only allow FedRAMP Medium services as of 03/2021"
+  name        = "Allow FedRAMP Mod Services"
+  description = "Only allow FedRAMP Moderate services"
 
-  content = data.template_file.fedrampm_policy.rendered
+  content = data.http.fedrampm_policy.body
 }
 
 resource "aws_organizations_policy_attachment" "allow_fedrampm_services_attachment" {

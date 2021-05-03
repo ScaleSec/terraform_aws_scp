@@ -1,14 +1,18 @@
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 
-data "template_file" "dodccsrgil2ew_policy" {
-  template = file("../templates/dodccsrgIl2Ew.json")
+data "http" "dodccsrgil2ew_policy" {
+  url = "https://raw.githubusercontent.com/salesforce/aws-allowlister/main/examples/latest/DOD_CC_SRG_IL2_EW-AllowList-SCP.json"
+
+  request_headers = {
+    Accept = "application/json"
+  }
 }
 
 resource "aws_organizations_policy" "allow_dodccsrgil2ew_services_policy" {
   name        = "Allow DoD CC SRG IL2 (East/West) Services"
-  description = "Only allow DoD CC SRG IL2 (East/West) services as of 03/2021"
+  description = "Only allow DoD CC SRG IL2 (East/West)."
 
-  content = data.template_file.dodccsrgil2ew_policy.rendered
+  content = data.http.dodccsrgil2ew_policy.body
 }
 
 resource "aws_organizations_policy_attachment" "allow_dodccsrgil2ew_services_attachment" {

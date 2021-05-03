@@ -1,14 +1,18 @@
 # The below approved services are based off the list located here: https://aws.amazon.com/compliance/services-in-scope/
 
-data "template_file" "dodccsrgil5gc_policy" {
-  template = file("../templates/dodccsrgIl5Gc.json")
+data "http" "dodccsrgil5gc_policy" {
+  url = "https://raw.githubusercontent.com/salesforce/aws-allowlister/main/examples/latest/DOD_CC_SRG_IL5_GC-AllowList-SCP.json"
+
+  request_headers = {
+    Accept = "application/json"
+  }
 }
 
 resource "aws_organizations_policy" "allow_dodccsrgil5gc_services_policy" {
   name        = "Allow DoD CC SRG IL5 (GovCloud) Services"
-  description = "Only allow DoD CC SRG IL5 (GovCloud) services as of 03/2021"
+  description = "Only allow DoD CC SRG IL5 (GovCloud) services."
 
-  content = data.template_file.dodccsrgil5gc_policy.rendered
+  content = data.http.dodccsrgil5gc_policy.body
 }
 
 resource "aws_organizations_policy_attachment" "allow_dodccsrgil5gc_services_attachment" {

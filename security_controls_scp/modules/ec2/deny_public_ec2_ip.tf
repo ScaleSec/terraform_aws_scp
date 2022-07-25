@@ -7,7 +7,11 @@ data "aws_iam_policy_document" "deny_ec2_public_ip_document" {
     sid = "DenyEc2PublicIp"
 
     actions = [
+      "ec2:CreateFleet",
+      "ec2:ModifyFleet",
+      "ec2:RequestSpotInstances",
       "ec2:RunInstances",
+      "ec2:RunScheduledInstances",
     ]
 
     resources = [
